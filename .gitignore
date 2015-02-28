@@ -5,6 +5,7 @@ examples/rhide.env
 Makefile
 *.o
 *.a
+*.exe
 configure.cache
 include/tv/configtv.h
 redhat/*.spec
