@@ -1,0 +1,11 @@
+CVS
+makes
+compat/rhide.env
+examples/rhide.env
+Makefile
+*.o
+*.a
+configure.cache
+include/tv/configtv.h
+redhat/*.spec
+rhtv-config

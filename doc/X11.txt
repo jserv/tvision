@@ -1,0 +1,180 @@
+Driver: X11
+Author: Salvador E. Tropea
+Status: Not complete, random suggestions and details
+Revision: $Revision: 1.11 $
+
+  This file documents details specific to the X11 driver. By X11 I mean the X
+Window system version 11 release 6 also known as X11R6. The driver was tested
+with XFree86 and Solaris.
+  Currently this file isn't organized and just contains things I think
+somebody could need to know.
+
+* The X11 driver was tested using Debian GNU/Linux Potato and Woody and
+Solaris 2.7 (Sun Ultra 60 machine).
+
+* The driver was tested in True Color modes, I didn't have the time to check
+it in palette modes (256 colors usually) and I'm almost sure nothing works
+for monochrome mode. If you need it working for 8 bpp depths please contact
+me and we will try to see a way to solve any issue. I don't have any
+motivation to expend my time working on 8 bpp modes if nobody needs it.
+
+* The approach used is slow in favor of portability and features. A lot of
+enhancements can be done. If you know about X11 programming and have some
+time please consider helping with it.
+
+* The driver uses 8x16 and 10x20 fixed fonts, no X fonts. In the future I
+plan to code a driver supporting X11 fonts. Why? simple: because in this way
+I can change the screen encoding on the fly and I know all the needed symbols
+will be available. The library supports over than 40 encodings which needs
+over than 580 symbols in the fonts. They cover the latin variants, cyrillics
+and greek alphabets. Not all X fonts supports all the needed symbols, in fact
+True Types usually have only ASCII characters. Additionally we need fixed
+width fonts.
+  Currently the fonts provided by SETEdit project have more variety than the
+XFree86 fixed font, which in fact are included.
+
+* I use monochromatic XImage objects for the fonts and I let X to expand the
+colors. XFree86 seems to be quite ineficient doing it, while Solaris' X is
+much faster. I think we can get much more speed by expanding the colors to an
+internal bitmap and then doing the blit in one operation. But this needs
+special care about different color depths and colors organizations. I guess
+the color values returned by X can make it easy, but never tried.
+
+* The implemented clipboards are XA_CLIPBOARD and XA_PRIMARY. Only XA_STRING
+format is supported.
+
+* I don't have a default icon, if you can create one please send it to me.
+
+* Debian GNU/Linux Potato specific (maybe others too):
+The Shift+Tab combination doesn't work. The problem seems to be related to
+the following key binding found in /usr/X11R6/lib/X11/xkb/symbols/us
+
+    key  <TAB> {  [  Tab,  ISO_Left_Tab   ]  };
+
+For some reason, didn't investigate it, the ISO_Left_Tab doesn't emit a
+keycode and hence Shift+Tab never reachs the code. May be I'm wrong but my
+way to fix that is by defining it like this:
+
+    key  <TAB> {  [  Tab  ]  };
+
+If you know about a better solution just let me know.
+
+* To quickly disable this driver when starting an application from a terminal
+emulator just define DISPLAY variable to nothing. Bash example:
+
+export DISPLAY=
+
+You can achive the same using a .tvrc file and giving a low priority to the
+X11 driver. Example:
+
+[TV]
+{
+ [X11]
+ {
+  Priority=1
+ }
+}
+
+The bigger the number the more important the driver. The default value is
+100, bigger than Linux, XTerm and UNIX drivers.
+
+* Window Manager/Desktop keys: In my opinion no WM/Dekstop should use simple
+key combinations for their own purposes interfering with applications.
+I don't know how to tell X11 to send the keystrokes to my application instead
+of the WM. I know an application can drag the keyboard focus but I also know
+it makes quite difficult to debug such an application. If you know about a
+way to tell X11 something like: Alt+F1 is mine, send it to me when I have the
+focus, please contact me.
+My suggestion is to configure your WM/Desktop to use more convenient
+keystrokes.
+I use Enlightenment as WM and Desktop here is what I do to avoid interference
+with TV applications:
+a) Debian GNU/Linux Potato: That's version 0.16.3 and I don't know about any
+Debian tool to configure the keyboard. So I edited
+/usr/share/enlightenment/config/keybindings.cfg changing all the Alt+Fx to
+Shift+Alt+Fx (__ALT to __ALT_SHIFT in Function keys).
+b) Debian GNU/Linux Woody: That's version 0.16.4. A very nice package called
+e16keyedit is available (I think it can be backported to Potato). It makes
+easier to redefine the keys used by E.
+
+* The ScreenWidth and ScreenHeight configuration variables are supported.
+They are very important because using them the window will be created with
+the desired size. If you change the size after initialization the window
+resize will be visible and part of the window could become outside the
+screen.
+
+* The driver is probably the most complete and flexible of all available
+drivers. All the TScreen things are supported:
+
+ * Window size.
+ * Window title.
+ * Font size, but you must provide the fonts.
+ * Secondary font.
+ * Color palette.
+ * Busy indicator.
+
+* The standard configuration options are supported:
+
+ScreenWidth       Columns of the window.
+ScreenHeight      Rows of the window.
+ScreenPalette     Color palette, that's a string containing the 16 RGB
+                  values.
+                  "0,0,0,0,0,168,..."
+FontWidth         Width of the font in pixels.
+FontHeight        Height of the font in pixels.
+LoadSecondaryFont Request a secondary font to the application (must provide a
+                  call back).
+AppCP             Application encoding.
+ScrCP             Screen encoding, this should be 885901.
+InpCP             Input encoding.
+
+  Plus the following options:
+
+Font10x20              Selects the 10x20 font instead of 8x16.
+HideCursorWhenNoFocus  By default enabled
+DontResizeToCells      Don't resize the window to a cells multiple size if
+                       the WM fails to follow the hints. First added to avoid
+                       problems found in KDE 3.1 alpha. Now enabled by default.
+                       Compiz also needs it. Disable it if your WM doesn't
+                       pay attention to the hints and you can correct the
+                       window size to be a multiple of the fonts size.
+InternalBusyCursor     When enabled we use our own mouse cursor for it.
+UseUpdateThread        When this option is enabled the driver updates the
+                       window content even if the TV application is blocking
+                       the CPU. That's very useful when the application
+                       blocks and the window becomes "exposed". If this isn't
+                       enabled X will fill the exposed area with black and
+                       the user won't see the window content until the
+                       application collects events.
+                       It is available using two mechanisms selected at
+                       compilation time:
+                       1) Using setitimer and signals:
+                       It seems to be stable but the TV application must
+                       avoid using setitimer and SIGALRM.
+                       I only tested it for Linux but I'm using concepts I
+                       successfuly used for Solaris in older versions of the
+                       driver.
+                       That's the default compilation option.
+                       2) Using POSIX threads (preemptive)                       
+                       Only available for Linux.
+                       When enabled the driver uses a separated thread to
+                       collect the "expose" events and update the screen.
+                       That's good because even when the application is
+                       blocking (calling system, performing a long
+                       calculation, etc.) the window can be exposed and the
+                       contents of the screen will be updated (you don't get
+                       a black window). But the problem is that Linux
+                       implementation of POSIX threads is quite poor and
+                       mixing threads with fork/exec doesn't work for big
+                       applications. The driver implements it using
+                       fork/system (system function is "thread protected")
+                       but you must avoid killing your child or the update
+                       thread will most probably die. The driver have a watch
+                       dog timer and if the update thread dies will revert to
+                       manual screen update in less than 2 seconds (>=1s &
+                       <2s aprox.).
+
+* I don't know if anybody can be interested on it, but this driver compiles
+and run for Windows. You need to use Cygwin with the XFree86 port installed
+and run the applications from X. The result is quite slow, but works.
+

@@ -1,0 +1,36 @@
+#!/usr/bin/make
+#
+# Copyright (c) 2003-2005 by Salvador E. Tropea
+# Covered by the GPL license.
+#
+# That's the makefile for Borland C++ compiler.
+# Also used by MSVC (nmake) and Open Watcom (wmake).
+# I used BC++ 5.5 free command line tools for testing.
+#
+
+!ifdef FOR_NMAKE
+MKF_EXT=.nmk
+MAKE=nmake
+!else ifdef FOR_OW
+MKF_EXT=.wat
+MAKE=wmake -ms
+ExLIB=.dll
+!else
+MKF_EXT=.bmk
+!endif
+
+#
+# Main targets
+#
+all: makes\librhtv$(ExLIB) $(EXTRA_TARGETS)
+
+makes\librhtv$(ExLIB):
+	-cd makes
+	$(MAKE) MKF_EXT="$(MKF_EXT)" DEBUG="$(DEBUG)" EXTRA_TARGETS="$(EXTRA_TARGETS)" -f librhtv.bmk all
+	-cd ..
+
+clean:
+	-del makes\obj\*.obj
+	-del makes\*.lib
+	-del makes\*$(ExLIB)
+

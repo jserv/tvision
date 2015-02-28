@@ -1,0 +1,114 @@
+Driver: QNX4
+Author: Mike Gorchak
+Status: Just a few words and patches.
+Revision: $Revision: 1.4 $
+
+I. What QNX4 driver supports:
+
+1. Supports qnx/qnxm terminal protocols via termlib library.
+2. Supports mouse on raw console and under pterm and qnxterm.
+3. Supports almost all key combinations under raw console.
+4. Supports pterm - Photon qnx terminal emulator. But it is very slow and
+   without some key combinations support due to internal pterm problems.
+5. Supports cpterm - Cyrillic Photon qnx terminal emulator by InfoMarket
+   (http://www.infomarket.ru). It's resonably fast and stable. With mouse
+   support.
+
+II. Some notes before you starting using TurboVision under QNX4:
+
+1. Before compiling TurboVision you must have the latest updates for the
+   Watcom C/C++ 10.6, including patch A and patch B.
+2. Watcom C/C++ 10.6 Patch A and B have broken unis3s.lib library which
+   damages registers during function call, so you must download the fixed
+   one from the http://mama.indstate.edu/users/liug/unix3s.lib .
+3. After that (important!) you must install or reinstall the latest EGCS 1.1.2
+   for the QNX4 from the http://www.jcmichot.usenet-fr.net/gcc/ .
+4. You must obtain the latest perl version 5.x from the QUICS at the
+   ftp://ftp.qnx.com/usr/free/ . Or better obtain latest perl 5.8.1 from
+   the http://mama.indstate.edu/users/liug/perl-5.8.1-bin.tar.gz .
+5. To successfully run TV under X11 and xterm drivers you can download
+   latest XFree86 for QNX4 from the http://sf.net/projects/openqnx .
+
+
+Attention! EGCS 1.1.2/QNX4 distributive have some errors in headers, so before
+           compiling TurboVision you must apply the following patch:
+
+--- //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66-orig/include/term.h	Mon Nov  3 01:24:29 2003
++++ //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66/include/term.h		Wed Nov  5 01:09:40 2003
+@@ -624,6 +624,7 @@
+ #define NUMCOUNT  39
+ #define STRCOUNT  412
+ 
++#pragma pack(1)
+ typedef struct termtype {	/* in-core form of terminfo data */
+     char  *term_names;		/* str_table offset of term names */
+     char  *str_table;		/* pointer to string table */
+@@ -639,6 +640,7 @@
+                  Nttyb;		/* current state of the terminal */
+     int          _baudrate;      /* used to compute padding */
+ } TERMINAL;
++#pragma pack()
+ 
+ extern TERMINAL	*cur_term;
+ 
+--- //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66-orig/include/sys/term.h	Mon Nov  3 01:24:36 2003
++++ //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66/include/sys/term.h	Wed Nov  5 04:51:59 2003
+@@ -31,7 +31,7 @@
+ #endif
+ 
+ typedef short int chtype;
+-typedef char bool;
++typedef char BOOL;
+ typedef char *charptr;
+ typedef short int charoffset;
+ 
+@@ -934,7 +934,7 @@
+     int     _inputfd;               /* input file descriptor                */
+     FILE    *_outputfp;             /* stream of the Filedes                */
+     unsigned keystart[16];          /* Bit array of start bytes for fn keys */
+-    bool    _fl_rawmode,            /* in cbreak(=1) or raw(=2) mode        */
++    BOOL    _fl_rawmode,            /* in cbreak(=1) or raw(=2) mode        */
+             fl_typeahdok,           /* ok to use typeahead                  */
+             _cursorstate,           /* cursor: 0=invis, 1=norm, 2=vvis      */
+             _iwait;                 /* true if input-pending                */
+@@ -946,7 +946,7 @@
+     char    _termname[15];          /* Terminal name from TERM envar        */
+     char    _tty;                   /* 1=tty, 0=not a tty ( file ).         */
+     char    _pad_char;              /* Padding char for delays              */
+-    bool    _key_null:1,            /* 1=report K_MOUSE_POS always          */
++    BOOL    _key_null:1,            /* 1=report K_MOUSE_POS always          */
+             _shift_held:1,          /* 1=Shift down valid only for mouse    */
+             _ctrl_held:1,           /* 1=Ctrl down valid only for mouse     */
+             _alt_held:1,            /* 1=Alt down valid only for mouse      */
+
+
+--- //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66-orig/include/curses.h	Mon Nov  3 01:24:29 2003
++++ //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66/include/curses.h	Wed Nov  5 01:09:40 2003
+@@ -82,7 +82,7 @@
+ 
+ #undef TRUE
+ #undef FALSE
+-#if	__WATCOMC__ < 1100
++#if	defined(__WATCOMC__) && (__WATCOMC__ < 1100)
+ #define	CXX_BUILTIN_BOOL 0
+ #define	CXX_TYPE_OF_BOOL unsigned
+ #else
+
+--- //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66-orig/include/sys/qnxterm.h	Mon Nov  3 01:24:35 2003
++++ //1/usr/local/lib/gcc-lib/i386-pc-qnx4/egcs-2.91.66/include/sys/qnxterm.h		Thu Nov  6 23:07:15 2003
+@@ -54,6 +54,7 @@
+                    scan_resize:1,
+                    mouse_cursor:1,       /* non-zero if cursor displayed */
+                    save_am_mode:1;
++    char           weirdgccbug[3];
+ 
+     unsigned       color,
+                    fill,
+@@ -125,7 +126,6 @@
+                    box_lantern,
+                    box_spare[33];
+     } ;
+-
+ 
+ #ifdef __cplusplus
+ extern "C" {

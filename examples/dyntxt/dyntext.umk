@@ -1,0 +1,22 @@
+#!/usr/bin/make
+# Automatically generated from RHIDE projects, don't edit
+#
+
+OBJFILES=\
+	./dyntext$(ExOBJ) \
+	./testdyn$(ExOBJ) 
+
+LIBRARIES=
+
+dyntext$(ExEXE):: \
+	./dyntext$(ExOBJ) \
+	./testdyn$(ExOBJ) \
+	$(MAKEFILE_DEPS) 
+	$(RHIDE_COMPILE_LINK)
+
+./dyntext$(ExOBJ):: dyntext.cpp  
+	$(RHIDE_COMPILE_CC)
+
+./testdyn$(ExOBJ):: testdyn.cpp  
+	$(RHIDE_COMPILE_CC)
+

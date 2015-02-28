@@ -1,0 +1,22 @@
+#!/usr/bin/make
+# Automatically generated from RHIDE projects, don't edit
+#
+
+OBJFILES=\
+	./listbox2$(ExOBJ) \
+	./lst_view$(ExOBJ) 
+
+LIBRARIES=
+
+listvi$(ExEXE):: \
+	./listbox2$(ExOBJ) \
+	./lst_view$(ExOBJ) \
+	$(MAKEFILE_DEPS) 
+	$(RHIDE_COMPILE_LINK)
+
+./listbox2$(ExOBJ):: listbox2.cpp  
+	$(RHIDE_COMPILE_CC)
+
+./lst_view$(ExOBJ):: lst_view.cpp  
+	$(RHIDE_COMPILE_CC)
+

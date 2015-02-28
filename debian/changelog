@@ -1,0 +1,556 @@
+rhtvision (2.2.1-2) unstable; urgency=low
+
+  * Fixed: Squeeze compilation issues (strict aliasing violated)
+
+ -- Salvador E. Tropea <set@ieee.org>  Mon, 06 Jun 2011 09:46:02 -0300
+
+rhtvision (2.2.1-1) unstable; urgency=low
+
+  * Fixed: TVConfigFile::GetString not removing trailing "
+  * Added: TScreen::windowClass to help X11 window managers.
+
+ -- Salvador E. Tropea <set@ieee.org>  Wed, 14 Jul 2010 09:59:58 -0300
+
+rhtvision (2.2.0-1) unstable; urgency=low
+
+  * Added AlCon (Alegro conio emulation) driver.
+
+ -- Salvador E. Tropea <set@ieee.org>  Tue, 23 Jun 2009 14:14:45 -0300
+
+rhtvision (2.1.0-5) unstable; urgency=low
+
+  * Modified to compile with Lenny (now stable)
+
+ -- Salvador E. Tropea <set@ieee.org>  Thu, 26 Feb 2009 16:15:23 -0200
+
+rhtvision (2.1.0-4) unstable; urgency=low
+
+  * Accept Salvador changes in his 2.1.0-4 but fixed to depend first in the
+    current non-transitional-dummy package of the GPM library.
+  * Also put those changes in the control file in addition to the control.in
+    one.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Wed, 27 Aug 2008 00:34:14 -0300
+
+rhtvision (2.1.0-3) unstable; urgency=low
+
+  * Added XBS-Bugs: mailto:ibaldo@adinet.com.uy fields to the control file
+    so that reportbug sends bug reports to me instead of the Debian Bug
+    Tracking System.
+  * Bumped Standards-Version to 3.7.2.2, no changes.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Tue, 08 May 2007 16:13:42 -0300
+
+rhtvision (2.1.0-2) unstable; urgency=low
+
+  * No longer delete these files because they no longer exist or are deleted
+    by the upstream now: linuxso/gkeyli.cc, linuxso/instlib,
+    linuxso/rhide.env, linux/rhide.env, linuxso/Makefile, linuxso/compat.mak,
+    intl/es_iso.mo, intl/es_iso.po, intl/es.mo, intl/ru.mo, intl/pl.mo.
+  * If you want to compile with GCC 4.0.3 comment out #undef  _LIBINTL_H and
+    #define _LIBINTL_H 1 in include/compatlayer.h.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Wed, 25 Jan 2006 20:21:46 -0200
+
+rhtvision (2.1.0-1) unstable; urgency=low
+
+  * New upstream version, still unstable so we cannot guarantee that nothing
+    bad happens to your dog if you use this stuff!
+  * Updated Build-Depends: added "file" (but I am not sure it is used or
+    needed, dpkg-depcheck reported it though), instead
+    of xlibs-dev | xlib6g-dev now it has libxmu-dev | xlibs-dev | xlib6g-dev
+    and libx11-dev | xlibs-dev | xlib6g-dev, this should give backwards
+    compatibility for various old Debian versions.
+  * Changed Depends of rhtvision*-dev package: removed libc6-dev and
+    libstdc++-dev since they are build-essential and also if someone is going
+    to compile something like a hello world in C++ they should have them,
+    instead of xlibs-dev | xlib6g-dev now it has libxmu-dev | xlibs-dev |
+    xlib6g-dev and libx11-dev | xlibs-dev | xlib6g-dev.
+  * Remove on clean the generated intl/pl.mo file (doh! come on Salvador!
+    provide a complete clean target! distribution packagers shouldn't be doing
+    this stuff).
+  * Bumped Standards-Version to 3.6.2.0, we should rename this package
+    librhtv but I don't like it too much.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Thu, 18 Aug 2005 22:50:33 -0300
+
+rhtvision (2.0.4-1) unstable; urgency=low
+
+  * New upstream version, this is unstable yet, beware!
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Thu, 23 Dec 2004 19:17:59 -0200
+
+rhtvision (2.0.3-3) unstable; urgency=low
+
+  * Salvador says this is it!, this is the version that will be officially
+    released! CVS release 2.599 2004/11/02 20:06:39.
+    Greetings to all my fans!!! (do I have one?) Anyway, I dedicate this
+    release to Enyunari!!!
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Sun, 21 Nov 2004 16:29:07 -0200
+
+rhtvision (2.0.3-2) unstable; urgency=low
+
+  * With a new version of lintian it complained that we should not
+    build-depend on make and gzip because the first is a build-essential
+    package and the second is an essential package. 
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Tue,  5 Oct 2004 20:24:34 -0200
+
+rhtvision (2.0.3-1) unstable; urgency=low
+
+  * New upstream version! CVS release 2.573 2004/09/22 21:26:40.
+  * Its been so long... I don't remember almost anything about Debian
+    packaging; I was very quiet all this time, without doing testing releases
+    and without testing developer versions. I am extremely lazy since then,
+    not only for this but for many other things of life in general, my home
+    computer isn't very well maintained neither and I am not very aware about
+    Debian as I was before. Anyway, lets try to be a bit useful and at the
+    same time thankful of this superb software.
+  * Bumped Standards-Version to 3.6.1.0 (and I hope it complies!).
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Sun, 26 Sep 2004 21:12:11 -0200
+
+rhtvision (2.0.2-1) unstable; urgency=low
+
+  * Upstream released a new fixed version! CVS release 2.493 2003/07/30
+    19:43:18 with sticky tag r2_0_2-1.
+  * Upstream fixed the show-stoper bug regarding the not versioned tvision.mo
+    files.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Sun, 10 Aug 2003 15:10:43 -0300
+
+rhtvision (2.0.2-0.1) unstable; urgency=low
+
+  * New upstream version! CVS release 2.487 2003/07/16 14:00:57.
+  * Sorry for the lateness, but I am very busy now, too much work, though I
+    don't regret! I finally got a good job!!!
+  * Salvador did changes to the Debian packaging:
+    - Don't build-depend on recode (not required anymore).
+    - Added README file, it is similar to maintainer.notes.
+    - Added --no-libs-here --real-prefix=/usr to ./configure.
+    - If tar fails when doing the backup of files modified doing the build it
+    doesn't stop the package generation, because some tar failings are due to
+    files not existing or silly errors.
+    - Added usr/bin directory to the -dev package, since it will contain the
+    rhtv-config program.
+  * Added doc/I18n.txt and doc/Streams.txt to the -dev package.
+  * Now sets the flags for the compiler in the environment instead of in the
+    make invocation.
+  * Specify explicitly -g and -Wall compiling options.
+  * Supports DEB_BUILD_OPTIONS as per Policy 3.5.7.
+  * Bumped Standards-Version to 3.5.8.0 (and I hope it complies!).
+  * Removed a lot of obsolete files in files_to_backup.
+  * Remove on clean makes/rhide.env, redhat/librhtv-*.spec and
+    makes/libtvfintl.a.
+  * The debian/copyright file references the GPL license text in the
+    /usr/share/common-licenses/ directory, thanks Lintian!!!
+  * Remove final dots in the single line description of the packages, thanks
+    Lintian!!!
+  * There is a pending bug with this library which forces this to not be an
+    official final release: the .mo files are called tvision.mo, thus if the
+    user wants to install 2 different versions of the library, one will
+    overwrite the other and dpkg will complain, and if we force dpkg to
+    continue anyway, the translations will be messed up for one version of
+    the library. This is not Debian specific though.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Sun, 27 Jul 2003 19:00:47 -0300
+
+rhtvision (2.0.1-1) unstable; urgency=low
+
+  * Yeah!!! New upstream stable version!!! Great! Thanks to all the friends
+    working on this library, specially to Salvador!
+  * This Debian release is dedicated to the crew of the space shuttle
+    Columbia.
+  * Build-Depends on gettext and recode to ensure correct i18n support.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Sat,  1 Feb 2003 16:57:54 -0300
+
+rhtvision (2.0.1-0.2) unstable; urgency=low
+
+  * New upstream version, not yet stable. CVS dated 13 Dec 2002.
+  * Added examples/bhelp/thelp.mak to files_to_backup.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Sat, 14 Dec 2002 19:22:09 -0300
+
+rhtvision (2.0.1-0.1) unstable; urgency=low
+
+  * New upstream version, near to be stable. CVS dated 3 Dec 2002.
+  * Specify absolute path in the ./configure --prefix=foo, this fixes
+    problems with wrong installation of translation files (.mo).
+  * Remove intl/es_iso.mo, intl/es_iso.po, intl/es.mo and intl/ru.mo.
+  * Backup linux/libtvfintl.a.
+  * Add locale files to the runtime library package.
+  * I am looking for a job (a paid one) for a long time but things are really
+    dificult here in Uruguay, if you have a job for me, don't hesitate to
+    contact!
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Wed,  4 Dec 2002 12:21:54 -0300
+
+rhtvision (2.0.0-1) unstable; urgency=low
+
+  * Well, this could be the first stable version if there are no major
+    problems. CVS dated 30 Sep 2002.
+  * Someone stole my bicycle!!!
+  * Added new documentation: doc/CodePages.txt, doc/ConfigFile.txt,
+    doc/Eterm.txt, doc/Linux.txt, doc/TVReference.html, doc/XTerm.txt and
+    THANKS.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Thu,  3 Oct 2002 18:26:22 -0300
+
+rhtvision (2.0.0-0.5) unstable; urgency=low
+
+  * New beta from CVS dated 11 Sep 2002.
+  * Now is on feature freeze and testing period!!!
+  * Installs doc/X11.txt document (noticed by Salvador).
+  * Added information about APT repository in README.Debian.
+  * README.Debian wasn't being installed on the shared library package, only
+    in the -dev (static library) package, I don't know why dh_installdocs
+    just installs it for the 1st. package mentioned in debian/control only,
+    instead of installing it for all packages.
+  * debian/maintainer.notes: it was very outdated, now contains accurate and
+    more useful information.
+
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Wed, 11 Sep 2002 15:00:44 -0300
+
+rhtvision (2.0.0-0.4) unstable; urgency=low
+
+  * New alpha from CVS dated 5 Sep 2002.
+  * Removed the add-log-mailing-address Emacs directive from the changelog
+    since the policy now prohibits it (detected by lintian).
+  * Implemented safe calls to ldconfig (detected by lintian), added file
+    debian/rhtvision.postrm for that (and remembered to update debian/rules
+    and lista).
+  
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Thu,  5 Sep 2002 17:43:19 -0300
+
+rhtvision (2.0.0-0.3) unstable; urgency=low
+
+  * New alpha from CVS dated 25 jul 2002 (hey! that's my birthday!!!).
+  * Removed debian/manpage.1.ex since it is likely that this package will
+    never need it.
+  * I changed my email from lubaldo to ibaldo, so updated that everywhere.
+  * Backup the following files: examples/clipboard/test.mak,
+    examples/fonts/genraw.mak, examples/helpdemo/helpdemo.mak,
+    win32/Makefile.
+  * Added more comments to the debian/rules file, it seems that Salvador was
+    confused one time :).
+  * Removed some CVS files and directories that where appearing on the
+    rhtvision2.0.0 package.
+  * Changed dependencies a little on debian/control, to help Potato users and
+    making the package more robust when building (suggested by Salvador), not
+    depend on specific versions of libraries or use | operators.
+    
+ -- Ivan Baldo <ibaldo@adinet.com.uy>  Mon, 29 Jul 2002 16:49:04 -0300
+
+rhtvision (2.0.0-0.2) unstable; urgency=low
+
+  * New alpha from CVS dated 5 Jun 2002.
+  * Backup examples/tvhc/tvhc.mak.
+  * Don't remove win32/rhide.env but instead backup it.
+  * Don't remove winnt/Makefile.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Thu,  6 Jun 2002 15:47:59 -0300
+
+rhtvision (2.0.0-0.1) unstable; urgency=low
+
+  * New alpha upstream release with a lot of changes and improvements,
+    most notably: native X11 suport!
+  * Small changes to debian/rules and debian/files_to_backup regarding
+    removing and backup of some files.
+  * Remove CVS directories from packages.
+  * Use dh_installexamples to install the examples of the -dev package.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Tue, 14 May 2002 21:34:46 -0300
+
+rhtvision (1.1.4-1) unstable; urgency=low
+
+  * The "Ivan hates computers after having good vacations" release.
+    Well, I was on Punta del Este, good beachs, good womans, some fun
+    at night, and no computers :). My hate for computers is temporary
+    and it happens everytime I have good vacations, so don't worry.
+  * New stable version, it fixes some memory leaks, improves
+    compilation, some other tiny things, etc.
+  * No need to remove the configure.cache file from debian/rules, it
+    is done by the upstream makefile now.
+  * Added linuxso/makemak.pl and win32/rhide.env to the files_to_backup.
+  * Remove linuxso/rhide.env symlink on clean.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Tue,  8 Jan 2002 12:08:52 -0300
+
+rhtvision (1.1.3-3) unstable; urgency=low
+
+  * Finally! RHTVision 1.1.3 is officially stable now!
+  * There was an empty and useless usr/share/man/man3 directory on the
+    package, now is gone.
+  * Added compat/compat.mak to files_to_backup.
+  * Remove generated linuxso/instlib on clean.
+  * Don't remove linuxso/makemak.pl on clean.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun, 11 Nov 2001 15:41:50 -0300
+
+rhtvision (1.1.3-2) unstable; urgency=low
+
+  * Now compiles with -D_REENTRANT as Debian Policy mandates.
+  * Now runs ./configure before make clean (reported by Salvador).
+  * Don't eliminate the ldconfig invocation of the upstream Makefile,
+    it seems that upstream has corrected its Makefile now (done after
+    Salvador reported that it didn't work on all systems, because I was
+    overwriting the Makefile while I was reading it, specially on
+    multiprocesor systems).
+  * Added include/tv/configtv.h to files_to_backup.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Wed, 17 Oct 2001 16:29:17 -0300
+
+rhtvision (1.1.3-1) unstable; urgency=low
+
+  * New upstream version.
+  * Upstream added a "buildpackage" script, I don't see the point of
+    it but if it is of some use to Salvador or others, I will keep it.
+  * Modified the new debian/buildpackage script to check before trying
+    to do anything that it is being run from the right directory.
+  * Simplified the backup system by using a TAR archive instead of
+    copying and moving files around. Good idea from Salvador. At the
+    same time now timestamps are preserved so CVS checkins are faster.
+  * Uncommented out the binary-indep target, just in case.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun, 14 Oct 2001 01:15:59 -0300
+
+rhtvision (1.1.2-1) unstable; urgency=low
+
+  * New upstream version.
+  * Upstream provides clean target!!! At last!!! Let's use it.
+  * No more *.bkpdeb files on the distribution.
+  * Upstream clean is not complete yet, so we still clean some files on
+    our own.
+  * Added to backup system: linuxso/compat.mak and win32/Makefile.
+  * We delete the line containing 'ldconfig' on the Makefile, this
+    causes a failure when compiling with fakeroot.
+  * Added clean-debian to the .PHONY list.
+  * Added Replaces: rhtvision-dev for more easy upgrades.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun,  7 Oct 2001 18:18:56 -0300
+
+rhtvision (1.1.1-1) unstable; urgency=low
+
+  * New upstream release!!!
+  * Salvador (upstream) made minor changes to some descriptions on the
+    control file and README.Debian for better description of the
+    distribution issues.
+  * Salvador also made small modifications to debian/rules to adapt to
+    his changes of my previous patch for the -fPIC compilation of the
+    compat library.
+  * Now before building we backup upstream files that are regenerated
+    and on clean we restore that files from the backups, so you can
+    build, rebuild, clean, reclean and original files are maintained.
+    As a plus this allows me to do a diff file for the upstream without
+    hassles.
+  * Now removes all .cvsignore files from the packages.
+  * Added xlibs-dev to Build-Depends so that the library compiles with
+    enhanced support for Eterm 0.8.10+.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Fri, 28 Sep 2001 21:26:36 -0300
+
+rhtvision (1.1.0-1) unstable; urgency=low
+
+  * New upstream version! Rejoice.
+  * Modified compat/ticks.c to include stdlib.h otherwise NULL is
+    undefined.
+  * Updated cleaning of generated files.
+  * Support for compiling the compatibility library with PIC code (thanks
+    Lintian for reporting this!).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Fri, 10 Aug 2001 16:07:50 -0300
+
+rhtvision (1.0.9-4) unstable; urgency=low
+
+  * Long time ago, this package (and other depending package) had to be
+    removed from the Debian distribution because of yet unresolved legal
+    problems with Inprise, fortunately the package had not been distributed
+    with any official Debian release.
+  * Slight changes to upstream source to make it compile on current
+    unstable distribution.
+  * Debian control file updated for new dependencies.
+  * Standards version 3.5.2.0.
+  * Do not use now deprecated dh_testversion, use a versioned build-dependency
+    on DebHelper instead.
+  * Made it clear that this is not an official package and that it is not
+    redistributable (control file, copyright, README.Debian, etc.).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun, 10 Jun 2001 19:05:26 -0300
+
+rhtvision (1.0.9-3) unstable; urgency=low
+
+  * Standards version 3.1.0.
+  * Added Build-Depends.
+  * Architecture set to "any" instead of "i386 alpha" as requested by
+    Roman Hodek. This library isn't tested on other architectures other
+    than i386 or alpha, so, testing is needed and reports of success or
+    failures will be apreciated.
+    See bug 50319.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Wed,  1 Dec 1999 00:38:51 -0300
+
+rhtvision (1.0.9-2) unstable; urgency=low
+
+  * Don't install manpage (symlink to undocumented(7) manpage).
+  * Remove .cvsignore file in usr/share/doc/rhtvision-dev/examples
+    directory.
+  * Don't use install-stamp (in rules file) anymore, to avoid possible
+    duplicate strings in maintainer script fragment files (see
+    debhelper changelog of version 2.0.56).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Mon,  1 Nov 1999 13:01:46 -0300
+
+rhtvision (1.0.9-1) unstable; urgency=low
+
+  * New upstream version:
+    - Better support for greek keyboards.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Tue, 26 Oct 1999 11:24:14 -0300
+
+rhtvision (1.0.8-3) unstable; urgency=low
+
+  * Previous version had wrong shlibs file.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun, 26 Sep 1999 17:53:59 -0300
+
+rhtvision (1.0.8-2) unstable; urgency=low
+
+  * Upstream sent newer compilation scripts (bugfixes, enhancements).
+  * Modified and bugfixed debian/maintainer.notes.
+  * Now shared library package Conflicts: rhtvision1. This is to force
+    the people who installed the previously broken library to uninstall
+    that library and its programs and upgrade everything. Sorry.
+  * Now rm -f linuxso/librhtv.so on clean.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Tue, 21 Sep 1999 12:50:24 -0300
+
+rhtvision (1.0.8-1) unstable; urgency=low
+
+  * New upstream version:
+    - Various bugfixes.
+    - Various improvements.
+    - Building system changed!
+    - Soname changes with every version (since every version is binary
+      incompatible).
+  * Now the -dev package depends on libstdc++-dev.
+  * Architecture is now i386 and alpha.
+  * Changed the name of the package from rhtvision to rhtvision1.0.8.
+    This name will change for every version of the library, since
+    every version is binary incompatible with the others.
+  * Improved and updated debian/maintainer.notes, please read it.
+  * Not include debugging version of the static library anymore.
+    If someone needs this, then tell me and I will include it again.
+  * Now requires debhelper 2.0.40 or greater (FHS related).
+  * Added DH_COMPAT=1 to debian/rules.
+  * Don't use .dirs files anymore.
+  * Don't use .files files anymore.
+  * Don't use .docs files anymore.
+  * Various changes to debian/rules file.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Wed,  8 Sep 1999 15:33:29 -0300
+
+rhtvision (1.0.7-1) unstable; urgency=low
+
+  * rhtvision1-dev now goes in the devel section instead of the libs
+    one.
+  * New upstream version:
+    - Enhancements to the menu bar.
+    - Now runs on the Alpha processors.
+    - Bugfixes.
+    - Works better under xterm.
+    - Shorter ESC delay.
+    - Enhancements to the documentation.
+    - Runs better when you have write only permission for the vcsa's.
+    - Disabled CTRL+Z because it is dangerous.
+    - Other minor enhancements.
+  * Added source dependencies to debian/maintainer.notes.
+  * Modified #!/bin/sh to #!/bin/sh -e for better error detection.
+  * Policy 3.0.0 compliant (FHS move).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Mon, 26 Jul 1999 17:19:36 -0300
+
+rhtvision (1.0.5-2) unstable; urgency=low
+
+  * I don't use dh_installexamples anymore, since it doesn't work for
+    me, instead I install the examples manually. So, there isn't
+    anymore the /usr/doc/rhtvision1-dev/examples/examples directory,
+    instead, there's only one examples directory.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Tue,  1 Jun 1999 19:02:12 -0300
+
+rhtvision (1.0.5-1) unstable; urgency=low
+
+  * New upstream version:
+    - Bugfixes.
+    - Debian diffs incorporated on upstream source.
+    - Renamed the name of the library from libtv to librhtv.
+    - Some more classes added.
+  * Standards version now is 2.5.0.0 (no changes).
+  * Instead of doing the symlinks manually, now I use dh_link.
+  * Now requires debhelpers >= 1.2.9.
+  * Mention in debian/maintainer.notes that debian/rules should be mode
+    755.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Tue,  6 Apr 1999 22:24:13 -0300
+
+rhtvision (1.0.3-6) unstable; urgency=low
+
+  * Removed postrm for rhtvision1-dev and rhtvision1, since it is not
+    necessary.
+  * Removed postinst for rhtvision1-dev since it is not necessary.
+  * Packages checked with Lintian, there are some warnings yet...
+  * Added maintainer.notes, gives usefull information for the
+    maintainer (hey, thats me!).
+  * I forgot about doing a symlink in the rhtvision1-dev package from
+    rhtvision1.so to rhtvision1.so.1.0.3 (Lintian not complained about
+    this!).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Fri,  5 Mar 1999 16:04:23 -0300
+
+rhtvision (1.0.3-5) unstable; urgency=low
+
+  * Applied patches from upstream maintainer. Avoiding deleting some
+    files that should not be deleted, added a clean-debian rule to
+    clean Debian specific files, only headers files are copied from the
+    include directory, and corrected the copying of files in the
+    example directory (it seems that the author has some files there
+    that don't need to be copied, dh_installexamples doesn't help very
+    much...).
+  * Made the clean target to depend on clean-debian, to avoid
+    repetition of code.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Mon,  1 Mar 1999 00:29:43 -0300
+
+rhtvision (1.0.3-4) unstable; urgency=low
+
+  * I don't remembered to add -lgpm on the upstream makemak.pl file.
+  * Now the symlink is forced (-f parameter to ln).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun, 28 Feb 1999 23:37:46 -0300
+
+rhtvision (1.0.3-3) unstable; urgency=low
+
+  * Removed some .ex files that never will be necessary.
+  * Corrected upstream makemak.pl script to make a shared library that
+    has dependencies, also added -pipe switch to gcc (little faster).
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Sun, 28 Feb 1999 22:35:57 -0300
+
+rhtvision (1.0.3-2) unstable; urgency=low
+
+  * Lots of bugfixes and now it works.
+  * First version showed to the upstream authors.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Fri, 19 Feb 1999 02:14:01 -0300
+
+rhtvision (1.0.3-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Ivan Baldo <lubaldo@adinet.com.uy>  Wed, 17 Feb 1999 13:05:15 -0300
+
+Local variables:
+mode: debian-changelog
+End:

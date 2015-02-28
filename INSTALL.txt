@@ -1,0 +1,22 @@
+  Read this file to know how to install from sources.
+
+  The package have an unified methode to compile for all the available
+platforms. But even with it I give separated instructions for each target.
+
+  Here are the files that describes how to compile for each target:
+  [alphabetically sorted]
+
+Borland C++ (5.5, 5.6)                    doc/install/bcc.txt
+CygWin                                    doc/install/cygwin.txt
+DJGPP (2.02, 2.03)                        doc/install/djgpp.txt
+Linux                                     doc/install/linux.txt
+Microsoft Visual C (5.0, 6.0, 7.0)        doc/install/msvc.txt
+MingWin                                   doc/install/mingwin.txt
+Open Watcom (1.3)                         doc/install/watcom.txt
+UNIX (POSIX) systems                      doc/install/unix.txt
+
+  Important: If you want to contribute to this project you can help me to
+keep any of these targets working. You just need to get the CVS changes
+periodically compile and tell me if it worked or not.
+
+$Id: INSTALL.txt,v 2.3 2005/09/20 14:48:37 set Exp $

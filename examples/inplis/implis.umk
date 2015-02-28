@@ -1,0 +1,22 @@
+#!/usr/bin/make
+# Automatically generated from RHIDE projects, don't edit
+#
+
+OBJFILES=\
+	./inplist$(ExOBJ) \
+	./test$(ExOBJ) 
+
+LIBRARIES=
+
+inplis$(ExEXE):: \
+	./inplist$(ExOBJ) \
+	./test$(ExOBJ) \
+	$(MAKEFILE_DEPS) 
+	$(RHIDE_COMPILE_LINK)
+
+./inplist$(ExOBJ):: inplist.cpp  
+	$(RHIDE_COMPILE_CC)
+
+./test$(ExOBJ):: test.cpp  
+	$(RHIDE_COMPILE_CC)
+

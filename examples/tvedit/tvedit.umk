@@ -1,0 +1,17 @@
+#!/usr/bin/make
+# Automatically generated from RHIDE projects, don't edit
+#
+
+OBJFILES=\
+	./tvedit$(ExOBJ) 
+
+LIBRARIES=
+
+tvedit$(ExEXE):: \
+	./tvedit$(ExOBJ) \
+	$(MAKEFILE_DEPS) 
+	$(RHIDE_COMPILE_LINK)
+
+./tvedit$(ExOBJ):: tvedit.cc  
+	$(RHIDE_COMPILE_CC)
+

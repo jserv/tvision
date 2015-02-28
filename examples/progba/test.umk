@@ -1,0 +1,22 @@
+#!/usr/bin/make
+# Automatically generated from RHIDE projects, don't edit
+#
+
+OBJFILES=\
+	./example$(ExOBJ) \
+	./tprogbar$(ExOBJ) 
+
+LIBRARIES=
+
+test$(ExEXE):: \
+	./example$(ExOBJ) \
+	./tprogbar$(ExOBJ) \
+	$(MAKEFILE_DEPS) 
+	$(RHIDE_COMPILE_LINK)
+
+./example$(ExOBJ):: example.cpp  
+	$(RHIDE_COMPILE_CC)
+
+./tprogbar$(ExOBJ):: tprogbar.cpp  
+	$(RHIDE_COMPILE_CC)
+

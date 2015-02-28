@@ -1,0 +1,33 @@
+#!/usr/bin/make
+#
+# Copyright (c) 2003-2004 by Salvador E. Tropea
+# Covered by the GPL license.
+#
+# This file contains the definitions that configures the compilation.
+# They include the C and C++ options and linker options.
+#
+
+!ifdef DEBUG
+# Options to debug
+CFLAGS   = /nologo -D_WIN32 -DFOR_EDITOR /EHsc -D_USE_32BIT_TIME_T -D_CRT_SECURE_NO_DEPRECATE /Zi
+LDFLAGS  = /DEBUG
+!else
+# Options for optimization (production)
+CFLAGS   = /nologo -O2 -D_WIN32 -DFOR_EDITOR /EHsc -D_USE_32BIT_TIME_T -D_CRT_SECURE_NO_DEPRECATE
+# Note: /GX is deprecated, not sure if needed for old versions
+#CFLAGS   = /nologo -O2 -D_WIN32 -DFOR_EDITOR /GX -D_USE_32BIT_TIME_T
+#CFLAGS   = /nologo -O2 -D_WIN32 -DFOR_EDITOR /GR- /GX-
+LDFLAGS  = /verbose
+!endif
+CXXFLAGS = /TP $(CFLAGS)
+
+RHIDE_GCC=cl
+RHIDE_GXX=cl
+RHIDE_LD=link
+
+# Sets the variables for the sub-makes
+EXTRALIB_MAKE_ARGS=_SUBMAKE=1 CC="$(RHIDE_GCC)" LD="$(RHIDE_LD)" CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" -f Makefile.nmk
+
+MK_EXT=.nmk
+MKF_EXT=.nmk
+

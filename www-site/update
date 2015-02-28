@@ -1,0 +1,2 @@
+#!/bin/sh
+scp *.html set,tvision@web.sourceforge.net:htdocs

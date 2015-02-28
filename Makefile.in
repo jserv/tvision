@@ -1,0 +1,56 @@
+#!/usr/bin/make
+#
+# Copyright (c) 2003-2004 by Salvador E. Tropea.
+# Covered by the GPL license.
+#
+ifeq ($(prefix),)
+  prefix=@prefix@
+endif
+ifeq ($(INSTALL),)
+  INSTALL=@install@
+endif
+EXE_EXT=@exe_ext@
+libdir=$(prefix)/lib
+OS=@OS@
+@maintainer_mode@
+@darwin@
+export
+
+.PHONY: @targets@ @installers@ install-headers install-config clean \
+	intl-dummy examples
+
+all: @targets@ intl-dummy
+
+@maintainance_rule@
+
+@target_rules@
+
+@intl_dummy_rule@
+
+examples:
+	$(MAKE) -C examples
+
+rhtv-config$(EXE_EXT): rhtv-config.c include/tv/configtv.h
+	@GCC@ -o rhtv-config$(EXE_EXT) -Iinclude rhtv-config.c
+
+install-headers:
+	@install_headers@
+
+@install_rules@
+
+@intl_dummy_install_rule@
+
+install-config:
+	@install_config@
+
+install: @installers@ install-headers install-intl-dummy install-config
+
+@clean@
+
+#
+# For compatibility with automake:
+# needed to 'make dist' of tiger
+#
+distdir: clean
+	@cp -pR * $(distdir)
+
