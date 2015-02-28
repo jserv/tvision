@@ -46,6 +46,10 @@ Mouse reporting not disabled at exit!!!
 #include <tv/unix/mouse.h>
 #include <tv/linux/mouse.h>
 
+#ifdef NCURSES_OPAQUE
+ #undef NCURSES_OPAQUE
+#endif
+#define NCURSES_OPAQUE 0
 #ifdef TVOSf_FreeBSD
  #include <ncurses.h>
 #else
