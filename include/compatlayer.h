@@ -348,13 +348,25 @@ typedef unsigned long  ulong;
     library. GCC implemented it in version 3.0. BC++ implemented some
     stuff in versions like BC++ 5.5. So that's a real mess. */
  #if __GNUC__>=3
-  #if __GNUC__>=4 || __GNUC_MINOR__>=4
-   // gcc>=3.4. It have __gnu_cxx::stdio_filebuf class.
-   #define CLY_filebuf       cxutil::stdio_filebuf<char>
-   #define CLY_int_filebuf   CLY_filebuf
-   #define CLY_NewFBFromFD(buf,f) buf=new CLY_int_filebuf(fdopen(f,"rb+"),ios::in|ios::out|ios::binary)
-   #undef  FSTREAM_HEADER
-   #define FSTREAM_HEADER  <tv/cx_stdio_filebuf.hpp>
+  #if defined(__cplusplus) && (__GNUC__>=4 || __GNUC_MINOR__>=4)
+   // Clang/libc++ defines __GNUC__=4
+   // C++ standard says inclusion of this file has no effect, to detect libc++
+   #include <ciso646>
+   #ifdef _LIBCPP_VERSION
+    // Clang, use supplied stdio_filebuf 
+    #define CLY_filebuf       cxutil::stdio_filebuf<char>
+    #define CLY_int_filebuf   CLY_filebuf
+    #define CLY_NewFBFromFD(buf,f) buf=new CLY_int_filebuf(fdopen(f,"rb+"),ios::in|ios::out|ios::binary)
+    #undef  FSTREAM_HEADER
+    #define FSTREAM_HEADER  <tv/cx_stdio_filebuf.hpp>
+   #else
+    // gcc>=3.4. It has __gnu_cxx::stdio_filebuf class.
+    #define CLY_filebuf       __gnu_cxx::stdio_filebuf<char>
+    #define CLY_int_filebuf   CLY_filebuf
+    #define CLY_NewFBFromFD(buf,f) buf=new CLY_int_filebuf(fdopen(f,"rb+"),ios::in|ios::out|ios::binary)
+    #undef  FSTREAM_HEADER
+    #define FSTREAM_HEADER  <ext/stdio_filebuf.h>
+   #endif
   #else
    // gcc 3.1 needs a special filebuf
    #define CLY_filebuf       std::filebuf
