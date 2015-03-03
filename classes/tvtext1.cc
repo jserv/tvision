@@ -110,10 +110,10 @@ char TStatusLine::ohintSeparator[] = "\xB3 "; // \xb3
 char TCheckBoxes::button[] = " [ ] ";
 char TCheckBoxes::obutton[] = " [ ] ";
 
-TScrollChars TScrollBar::vChars = {30, 31, 177, 254, 178}; // \x1e\x1f\xb1\xfe\xb2
-TScrollChars TScrollBar::ovChars = {30, 31, 177, 254, 178}; // \x1e\x1f\xb1\xfe\xb2
-TScrollChars TScrollBar::hChars = {17, 16, 177, 254, 178}; // \x11\x10\xb1\xfe\xb2
-TScrollChars TScrollBar::ohChars = {17, 16, 177, 254, 178}; // \x11\x10\xb1\xfe\xb2
+TScrollChars TScrollBar::vChars = {30, 31, '\xB1', '\xFE', '\xB2'}; // \x1e\x1f\xb1\xfe\xb2
+TScrollChars TScrollBar::ovChars = {30, 31, '\xB1', '\xFE', '\xB2'}; // \x1e\x1f\xb1\xfe\xb2
+TScrollChars TScrollBar::hChars = {17, 16, '\xB1', '\xFE', '\xB2'}; // \x11\x10\xb1\xfe\xb2
+TScrollChars TScrollBar::ohChars = {17, 16, '\xB1', '\xFE', '\xB2'}; // \x11\x10\xb1\xfe\xb2
 
 char TButton::shadows[] = "\xDC\xDB\xDF"; // \xdc\xdb\xdf
 char TButton::oshadows[] = "\xDC\xDB\xDF"; // \xdc\xdb\xdf

@@ -173,7 +173,7 @@ specified height.
   
 ***************************************************************************/
 
-uchar *TVFontCollection::GetFont(int width, int height)
+uchar *TVFontCollection::GetFont(unsigned int width, unsigned int height)
 {
  int oneMore=0,oneLess=0;
  SizeFont sz={width,height};

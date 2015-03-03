@@ -79,7 +79,7 @@ public:
  virtual void freeItem(void *item);
  static void ReduceOne(uchar *dest, uchar *ori, int height, int wBytes, int num=256);
  static void EnlargeOne(uchar *dest, uchar *ori, int height, int wBytes, int num=256);
- uchar *GetFont(int width, int height);
+ uchar *GetFont(unsigned int width, unsigned int height);
  void   SetCodePage(int id);
  int    GetError() { return error; }
  const char *GetFileName() { return fileName; }
