@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(HAVE_SSC 0)
-
 INCLUDE(CheckFunctionExists)
 INCLUDE(TestBigEndian)
+
+# TODO: What's is SSC?
+set(HAVE_SSC 0)
 
 find_package(Curses)
 if(CURSES_HAVE_NCURSES_H)
@@ -25,6 +26,7 @@ if(CMAKE_USE_PTHREADS_INIT)
 	set(HAVE_LINUX_PTHREAD 1)
 endif(CMAKE_USE_PTHREADS_INIT)
 
+# TODO: Doesn't work with cross-compilation
 if("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")
 	set(HAVE_64BITS_POINTERS 1)
 endif("${CMAKE_SIZEOF_VOID_P}" EQUAL "8")

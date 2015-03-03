@@ -265,6 +265,136 @@ set(RHTV_SRCS
 	stream/swindow.cc
 )
 
+set(RHTV_HDRS
+	include/cl/unistd.h
+	include/compatlayer.h
+	include/tv.h
+	include/tv/app.h
+	include/tv/applictn.h
+	include/tv/backgrnd.h
+	include/tv/button.h
+	include/tv/calc.h
+	include/tv/chdirdlg.h
+	include/tv/checkbox.h
+	include/tv/clrdisp.h
+	include/tv/clrdlg.h
+	include/tv/clrgroup.h
+	include/tv/clrgrpli.h
+	include/tv/clritem.h
+	include/tv/clriteml.h
+	include/tv/clrselct.h
+	include/tv/cluster.h
+	include/tv/cmdset.h
+	include/tv/codepage.h
+	include/tv/collectn.h
+	include/tv/colorsel.h
+	include/tv/configfile.h
+	include/tv/configtv.h
+	include/tv/desktop.h
+	include/tv/dialog.h
+	include/tv/dialogs.h
+	include/tv/dircoll.h
+	include/tv/direntr.h
+	include/tv/dirlibo.h
+	include/tv/drawbuf.h
+	include/tv/drivers.h
+	include/tv/editors.h
+	include/tv/event.h
+	include/tv/eventqu.h
+	include/tv/filecoll.h
+	include/tv/filedlg.h
+	include/tv/filelist.h
+	include/tv/fileview.h
+	include/tv/filinfpn.h
+	include/tv/filinpln.h
+	include/tv/findrepl.h
+	include/tv/fontcoll.h
+	include/tv/fpbase.h
+	include/tv/fpstream.h
+	include/tv/frame.h
+	include/tv/gkey.h
+	include/tv/group.h
+	include/tv/help.h
+	include/tv/helpbase.h
+	include/tv/history.h
+	include/tv/histvwer.h
+	include/tv/histwind.h
+	include/tv/ifpstrm.h
+	include/tv/indicato.h
+	include/tv/inputln.h
+	include/tv/intl.h
+	include/tv/iopstrm.h
+	include/tv/ipstream.h
+	include/tv/label.h
+	include/tv/listbox.h
+	include/tv/lstviewr.h
+	include/tv/menu.h
+	include/tv/menubar.h
+	include/tv/menubox.h
+	include/tv/menuitem.h
+	include/tv/menus.h
+	include/tv/menuview.h
+	include/tv/mnoselct.h
+	include/tv/msgbox.h
+	include/tv/no_mss.h
+	include/tv/nscoll.h
+	include/tv/nssorcol.h
+	include/tv/object.h
+	include/tv/objects.h
+	include/tv/ofpstrm.h
+	include/tv/opstream.h
+	include/tv/osclipboard.h
+	include/tv/palette.h
+	include/tv/parmtext.h
+	include/tv/parttree.h
+	include/tv/point.h
+	include/tv/preadobj.h
+	include/tv/program.h
+	include/tv/pstream.h
+	include/tv/pwritobj.h
+	include/tv/radiobtn.h
+	include/tv/rect.h
+	include/tv/rescoll.h
+	include/tv/resfile.h
+	include/tv/resitem.h
+	include/tv/resource.h
+	include/tv/screen.h
+	include/tv/scrlbar.h
+	include/tv/scroller.h
+	include/tv/searchrc.h
+	include/tv/sitem.h
+	include/tv/sortcoll.h
+	include/tv/sortlibo.h
+	include/tv/ssc_streams.h
+	include/tv/statsdef.h
+	include/tv/statsitm.h
+	include/tv/statslin.h
+	include/tv/stddlg.h
+	include/tv/streambl.h
+	include/tv/strilist.h
+	include/tv/strinrec.h
+	include/tv/strlistm.h
+	include/tv/strmblcl.h
+	include/tv/strmblty.h
+	include/tv/strncoll.h
+	include/tv/sttctext.h
+	include/tv/submenu.h
+	include/tv/system.h
+	include/tv/tkeyext.h
+	include/tv/tkeys.h
+	include/tv/tobjstrm.h
+	include/tv/ttypes.h
+	include/tv/tvconfig.h
+	include/tv/tvedit.h
+	include/tv/tvobjs.h
+	include/tv/tvutil.h
+	include/tv/validate.h
+	include/tv/view.h
+	include/tv/views.h
+	include/tv/window.h
+	include/tv/yes_mss.h
+)
+
 if(TVCompf_MinGW OR TVComp_MSC)
 	set(RHTV_REGEX_SRCS compat/regex.c)
 endif(TVCompf_MinGW OR TVComp_MSC)
@@ -408,138 +538,26 @@ set(RHTV_X11_SRCS
 	classes/x11/x11src.cc
 )
 
-set(RHTV_HDRS
-	include/cl/unistd.h
-	include/compatlayer.h
-	include/tv.h
-	include/tv/app.h
-	include/tv/applictn.h
-	include/tv/backgrnd.h
-	include/tv/button.h
-	include/tv/calc.h
-	include/tv/chdirdlg.h
-	include/tv/checkbox.h
-	include/tv/clrdisp.h
-	include/tv/clrdlg.h
-	include/tv/clrgroup.h
-	include/tv/clrgrpli.h
-	include/tv/clritem.h
-	include/tv/clriteml.h
-	include/tv/clrselct.h
-	include/tv/cluster.h
-	include/tv/cmdset.h
-	include/tv/codepage.h
-	include/tv/collectn.h
-	include/tv/colorsel.h
-	include/tv/configfile.h
-	include/tv/configtv.h
-	include/tv/desktop.h
-	include/tv/dialog.h
-	include/tv/dialogs.h
-	include/tv/dircoll.h
-	include/tv/direntr.h
-	include/tv/dirlibo.h
-	include/tv/drawbuf.h
-	include/tv/drivers.h
-	include/tv/editors.h
-	include/tv/event.h
-	include/tv/eventqu.h
-	include/tv/filecoll.h
-	include/tv/filedlg.h
-	include/tv/filelist.h
-	include/tv/fileview.h
-	include/tv/filinfpn.h
-	include/tv/filinpln.h
-	include/tv/findrepl.h
-	include/tv/fontcoll.h
-	include/tv/fpbase.h
-	include/tv/fpstream.h
-	include/tv/frame.h
-	include/tv/gkey.h
-	include/tv/group.h
-	include/tv/help.h
-	include/tv/helpbase.h
-	include/tv/history.h
-	include/tv/histvwer.h
-	include/tv/histwind.h
-	include/tv/ifpstrm.h
-	include/tv/indicato.h
-	include/tv/inputln.h
-	include/tv/intl.h
-	include/tv/iopstrm.h
-	include/tv/ipstream.h
-	include/tv/label.h
-	include/tv/listbox.h
-	include/tv/lstviewr.h
-	include/tv/menu.h
-	include/tv/menubar.h
-	include/tv/menubox.h
-	include/tv/menuitem.h
-	include/tv/menus.h
-	include/tv/menuview.h
-	include/tv/mnoselct.h
-	include/tv/msgbox.h
-	include/tv/no_mss.h
-	include/tv/nscoll.h
-	include/tv/nssorcol.h
-	include/tv/object.h
-	include/tv/objects.h
-	include/tv/ofpstrm.h
-	include/tv/opstream.h
-	include/tv/osclipboard.h
-	include/tv/palette.h
-	include/tv/parmtext.h
-	include/tv/parttree.h
-	include/tv/point.h
-	include/tv/preadobj.h
-	include/tv/program.h
-	include/tv/pstream.h
-	include/tv/pwritobj.h
-	include/tv/radiobtn.h
-	include/tv/rect.h
-	include/tv/rescoll.h
-	include/tv/resfile.h
-	include/tv/resitem.h
-	include/tv/resource.h
-	include/tv/screen.h
-	include/tv/scrlbar.h
-	include/tv/scroller.h
-	include/tv/searchrc.h
-	include/tv/sitem.h
-	include/tv/sortcoll.h
-	include/tv/sortlibo.h
-	include/tv/ssc_streams.h
-	include/tv/statsdef.h
-	include/tv/statsitm.h
-	include/tv/statslin.h
-	include/tv/stddlg.h
-	include/tv/streambl.h
-	include/tv/strilist.h
-	include/tv/strinrec.h
-	include/tv/strlistm.h
-	include/tv/strmblcl.h
-	include/tv/strmblty.h
-	include/tv/strncoll.h
-	include/tv/sttctext.h
-	include/tv/submenu.h
-	include/tv/system.h
-	include/tv/tkeyext.h
-	include/tv/tkeys.h
-	include/tv/tobjstrm.h
-	include/tv/ttypes.h
-	include/tv/tvconfig.h
-	include/tv/tvedit.h
-	include/tv/tvobjs.h
-	include/tv/tvutil.h
-	include/tv/validate.h
-	include/tv/view.h
-	include/tv/views.h
-	include/tv/window.h
-	include/tv/yes_mss.h
-)
+# TODO: Make these work
+#if(DOS)
+#	set(RHTV_PLATFORM_SRCS "${RHTV_DOS_SRCS}")
+#endif(DOS)
+#if(QNX4)
+#	set(RHTV_PLATFORM_SRCS "${RHTV_QNX4_SRCS}")
+#endif(QNX4)
+#if(QNXRTP)
+#	set(RHTV_PLATFORM_SRCS "${RHTV_QNXRTP_SRCS}")
+#endif(QNXRTP)
 
 if(WIN32)
-	set(RHTV_PLATFORM_SRCS "${RHTV_WINNT_SRCS}")
+	# WinGR?
+	if(CMAKE_SYSTEM_VERSION MATCHES "4.0" OR CMAKE_SYSTEM_VERSION MATCHES "4.10" OR CMAKE_SYSTEM_VERSION MATCHES "4.90")
+		# Win95, Win98, WinME
+		set(RHTV_PLATFORM_SRCS "${RHTV_WIN32_SRCS}")
+	else(CMAKE_SYSTEM_VERSION MATCHES "4.0" OR CMAKE_SYSTEM_VERSION MATCHES "4.10" OR CMAKE_SYSTEM_VERSION MATCHES "4.90")
+		# WinNT/2000/XP/...
+		set(RHTV_PLATFORM_SRCS "${RHTV_WINNT_SRCS}")
+	endif(CMAKE_SYSTEM_VERSION MATCHES "4.0" OR CMAKE_SYSTEM_VERSION MATCHES "4.10" OR CMAKE_SYSTEM_VERSION MATCHES "4.90")
 endif(WIN32)
 
 if(UNIX)
@@ -547,8 +565,12 @@ if(UNIX)
 endif(UNIX)
 
 if(HAVE_X11)
-	set(RHTV_PLATFORM_SRCS "${RHTV_UNIX_SRCS} ${RHTV_X11_SRCS}")
+	list(APPEND RHTV_PLATFORM_SRCS ${RHTV_X11_SRCS}")
 endif(HAVE_X11)
+
+if("${CMAKE_SYSTEM_NAME}" EQUAL "Linux")
+	list(APPEND RHTV_PLATFORM_SRCS ${RHTV_LINUX_SRCS}")
+endif("${CMAKE_SYSTEM_NAME}" EQUAL "Linux")
 
 add_library(rhtv ${RHTV_HDRS} ${INTL_SRCS} ${COMPAT_SRCS} ${RHTV_SRCS} ${RHTV_PLATFORM_SRCS} ${RHTV_REGEX_SRCS} ${RHTV_SSC_SRCS})
 
