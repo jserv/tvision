@@ -10,3 +10,4 @@ configure.cache
 include/tv/configtv.h
 redhat/*.spec
 rhtv-config
+build/
