@@ -48,12 +48,12 @@ void makerez()
    fpstream *ofps=0;
 
 
-   cout<< "Creating "<< rezFileName << endl;
+   std::cout<< "Creating "<< rezFileName << std::endl;
 
    ofps = new fpstream( rezFileName, CLY_IOSOut | CLY_IOSBin );
    if( !ofps->good() )
     {
-      cerr<< rezFileName <<": init failed..."<<endl;
+      std::cerr<< rezFileName <<": init failed..."<<std::endl;
       exit(1);
     }
 
@@ -61,7 +61,7 @@ void makerez()
    myRez = new TResourceFile( ofps );
    if( !myRez )
    {
-     cerr<< "Resource file init failed..."<<endl;
+     std::cerr<< "Resource file init failed..."<<std::endl;
      exit(1);
    }
 
@@ -73,13 +73,13 @@ void makerez()
 
    if( !pbar )
    {
-    cerr<< "Progress Bar init failed..."<<endl;
+    std::cerr<< "Progress Bar init failed..."<<std::endl;
     exit(1);
     }
 
    if( !pd )
    {
-    cerr<< "Dialog Box init failed..."<<endl;
+    std::cerr<< "Dialog Box init failed..."<<std::endl;
     exit(1);
     }
 
