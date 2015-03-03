@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 project(rhtvision)
 
-find_package(Curses REQUIRED)
-include_directories(${CMAKE_SOURCE_DIR}/include ${CURSES_INCLUDE_DIRS})
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}")
+include(TVConfig)
+
+include_directories(${CMAKE_BINARY_DIR}/include ${CMAKE_SOURCE_DIR}/include ${CURSES_INCLUDE_DIRS})
 
 set(COMPAT_SRCS
 	compat/beep.c
@@ -13,33 +15,23 @@ set(COMPAT_SRCS
 	compat/fileexists.c
 	compat/filelength.c
 	compat/fixpath.c
-	compat/fnmatch.c
 	compat/getcurdir.c
 	compat/getline.c
 	compat/getopt.c
 	compat/getopt1.c
 	compat/getshell.c
-	compat/glob.c
-	compat/globfree.c
 	compat/iffilelen.cc
 	compat/isdir.c
 	compat/isrelpath.c
 	compat/iswild.c
 	compat/itoa.c
-	compat/mkstemp.c
 	compat/nl_langinfo.c
-	compat/ntdirent.c
 	compat/pathvalid.c
-	compat/regex.c
 	compat/releasec.c
 	compat/snprintf.c
-	compat/ssc_streams.cc
 	compat/strlwr.c
 	compat/strupr.c
 	compat/ticks.c
-	compat/unc.c
-	compat/unc_95.c
-	compat/unc_nt.c
 	compat/validfilename.c
 	compat/yieldpro.c
 )
@@ -56,28 +48,10 @@ set(RHTV_SRCS
 	misc.cc
 	msgbox.cc
 	newstr.cc
-	classes/alcon/alcon.cc
-	classes/alcon/alcondis.cc
-	classes/alcon/alconkey.cc
-	classes/alcon/alconmouse.cc
-	classes/alcon/alconscr.cc
 	classes/calcdisp.cc
 	classes/calculat.cc
 	classes/codepage.cc
 	classes/configfile.cc
-	classes/dos/dosdis.cc
-	classes/dos/doskey.cc
-	classes/dos/dosmouse.cc
-	classes/dos/dosscr.cc
-	classes/dos/rhscreen.cc
-	classes/dos/screen.cc
-	classes/dos/sescreen.cc
-	classes/dos/vesa.cc
-	classes/dos/vga.cc
-	classes/dos/vgaregs.c
-	classes/dos/vgaregs.h
-	classes/dos/vgastate.c
-	classes/dos/vgastate.h
 	classes/fontcoll.cc
 	classes/fpbase.cc
 	classes/fpstream.cc
@@ -86,22 +60,10 @@ set(RHTV_SRCS
 	classes/ifpstrea.cc
 	classes/iopstrea.cc
 	classes/ipstream.cc
-	classes/linux/linuxdis.cc
-	classes/linux/linuxkey.cc
-	classes/linux/linuxmouse.cc
-	classes/linux/linuxscr.cc
 	classes/ofpstrea.cc
 	classes/opstream.cc
 	classes/osclipboard.cc
 	classes/pstream.cc
-	classes/qnx4/qnx4dis.cc
-	classes/qnx4/qnx4key.cc
-	classes/qnx4/qnx4mouse.cc
-	classes/qnx4/qnx4scr.cc
-	classes/qnxrtp/qnxdis.cc
-	classes/qnxrtp/qnxkey.cc
-	classes/qnxrtp/qnxmouse.cc
-	classes/qnxrtp/qnxscr.cc
 	classes/tapplica.cc
 	classes/tbackgro.cc
 	classes/tbutton.cc
@@ -191,33 +153,8 @@ set(RHTV_SRCS
 	classes/tview.cc
 	classes/tvintl.cc
 	classes/tvtext1.cc
-	classes/tvtext2.cc
+#	classes/tvtext2.cc
 	classes/twindow.cc
-	classes/unix/unixdis.cc
-	classes/unix/unixkey.cc
-	classes/unix/unixmouse.cc
-	classes/unix/unixscr.cc
-	classes/unix/xtermdis.cc
-	classes/unix/xtermkey.cc
-	classes/unix/xtermmouse.cc
-	classes/unix/xtermscr.cc
-	classes/win32/win32clip.cc
-	classes/win32/win32dis.cc
-	classes/win32/win32key.cc
-	classes/win32/win32mouse.cc
-	classes/win32/win32scr.cc
-	classes/wingr/wingrdis.cc
-	classes/wingr/wingrkey.cc
-	classes/wingr/wingrmouse.cc
-	classes/wingr/wingrscr.cc
-	classes/winnt/winntdis.cc
-	classes/winnt/winntkey.cc
-	classes/winnt/winntmouse.cc
-	classes/winnt/winntscr.cc
-	classes/x11/x11dis.cc
-	classes/x11/x11key.cc
-	classes/x11/x11mouse.cc
-	classes/x11/x11src.cc
 	names/nbackgro.cc
 	names/nbutton.cc
 	names/ncalcdis.cc
@@ -328,14 +265,153 @@ set(RHTV_SRCS
 	stream/swindow.cc
 )
 
-set(RHTV_HDRS
-	include/cl/unistd.h
-	include/compatlayer.h
-	include/tv.h
+if(TVCompf_MinGW OR TVComp_MSC)
+	set(RHTV_REGEX_SRCS compat/regex.c)
+endif(TVCompf_MinGW OR TVComp_MSC)
+
+if(HAVE_SSC)
+	set(RHTV_SSC_SRCS compat/ssc_streams.cc )
+endif(HAVE_SSC)
+
+set(RHTV_ALCON_SRCS
 	include/tv/alcon/alcon.h
 	include/tv/alcon/key.h
 	include/tv/alcon/mouse.h
 	include/tv/alcon/screen.h
+	classes/alcon/alcon.cc
+	classes/alcon/alcondis.cc
+	classes/alcon/alconkey.cc
+	classes/alcon/alconmouse.cc
+	classes/alcon/alconscr.cc
+)
+
+set(RHTV_DOS_SRCS
+	include/tv/dos/key.h
+	include/tv/dos/mouse.h
+	include/tv/dos/screen.h
+	classes/dos/dosdis.cc
+	classes/dos/doskey.cc
+	classes/dos/dosmouse.cc
+	classes/dos/dosscr.cc
+	classes/dos/rhscreen.cc
+	classes/dos/screen.cc
+	classes/dos/sescreen.cc
+	classes/dos/vesa.cc
+	classes/dos/vga.cc
+	classes/dos/vgaregs.c
+	classes/dos/vgaregs.h
+	classes/dos/vgastate.c
+	classes/dos/vgastate.h
+)
+
+set(RHTV_LINUX_SRCS
+	include/tv/linux/key.h
+	include/tv/linux/log.h
+	include/tv/linux/mouse.h
+	include/tv/linux/screen.h
+	classes/linux/linuxdis.cc
+	classes/linux/linuxkey.cc
+	classes/linux/linuxmouse.cc
+	classes/linux/linuxscr.cc
+)
+
+set(RHTV_QNX4_SRCS
+	include/tv/qnx4/key.h
+	include/tv/qnx4/mouse.h
+	include/tv/qnx4/screen.h
+	classes/qnx4/qnx4dis.cc
+	classes/qnx4/qnx4key.cc
+	classes/qnx4/qnx4mouse.cc
+	classes/qnx4/qnx4scr.cc
+)
+
+set(RHTV_QNXRTP_SRCS
+	include/tv/qnxrtp/key.h
+	include/tv/qnxrtp/mouse.h
+	include/tv/qnxrtp/screen.h
+	classes/qnxrtp/qnxdis.cc
+	classes/qnxrtp/qnxkey.cc
+	classes/qnxrtp/qnxmouse.cc
+	classes/qnxrtp/qnxscr.cc
+)
+
+set(RHTV_UNIX_SRCS
+	include/tv/unix/key.h
+	include/tv/unix/mouse.h
+	include/tv/unix/screen.h
+	include/tv/unix/xtkey.h
+	include/tv/unix/xtmouse.h
+	include/tv/unix/xtscreen.h
+	classes/unix/unixdis.cc
+	classes/unix/unixkey.cc
+	classes/unix/unixmouse.cc
+	classes/unix/unixscr.cc
+	classes/unix/xtermdis.cc
+	classes/unix/xtermkey.cc
+	classes/unix/xtermmouse.cc
+	classes/unix/xtermscr.cc
+)
+
+set(RHTV_WIN32_SRCS
+	compat/fnmatch.c
+	compat/glob.c
+	compat/globfree.c
+	compat/mkstemp.c
+	compat/ntdirent.c	
+	compat/unc.c
+	compat/unc_95.c
+	include/tv/win32/key.h
+	include/tv/win32/mouse.h
+	include/tv/win32/screen.h
+	include/tv/win32/win32clip.h
+	classes/win32/win32clip.cc
+	classes/win32/win32dis.cc
+	classes/win32/win32key.cc
+	classes/win32/win32mouse.cc
+	classes/win32/win32scr.cc
+)
+
+set(RHTV_WINGR_SRCS
+	include/tv/wingr/key.h
+	include/tv/wingr/mouse.h
+	include/tv/wingr/screen.h
+	classes/wingr/wingrdis.cc
+	classes/wingr/wingrkey.cc
+	classes/wingr/wingrmouse.cc
+	classes/wingr/wingrscr.cc
+)
+
+set(RHTV_WINNT_SRCS
+	compat/fnmatch.c
+	compat/glob.c
+	compat/globfree.c
+	compat/mkstemp.c
+	compat/ntdirent.c	
+	compat/unc.c
+	compat/unc_nt.c
+	include/tv/winnt/key.h
+	include/tv/winnt/mouse.h
+	include/tv/winnt/screen.h
+	classes/winnt/winntdis.cc
+	classes/winnt/winntkey.cc
+	classes/winnt/winntmouse.cc
+	classes/winnt/winntscr.cc
+)
+
+set(RHTV_X11_SRCS
+	include/tv/x11/key.h
+	include/tv/x11/mouse.h
+	include/tv/x11/screen.h
+	classes/x11/x11dis.cc
+	classes/x11/x11key.cc
+	classes/x11/x11mouse.cc
+	classes/x11/x11src.cc
+)
+
+set(RHTV_HDRS
+	include/cl/unistd.h
+	include/compatlayer.h
+	include/tv.h
 	include/tv/app.h
 	include/tv/applictn.h
 	include/tv/backgrnd.h
@@ -363,9 +439,6 @@ set(RHTV_HDRS
 	include/tv/dircoll.h
 	include/tv/direntr.h
 	include/tv/dirlibo.h
-	include/tv/dos/key.h
-	include/tv/dos/mouse.h
-	include/tv/dos/screen.h
 	include/tv/drawbuf.h
 	include/tv/drivers.h
 	include/tv/editors.h
@@ -396,10 +469,6 @@ set(RHTV_HDRS
 	include/tv/iopstrm.h
 	include/tv/ipstream.h
 	include/tv/label.h
-	include/tv/linux/key.h
-	include/tv/linux/log.h
-	include/tv/linux/mouse.h
-	include/tv/linux/screen.h
 	include/tv/listbox.h
 	include/tv/lstviewr.h
 	include/tv/menu.h
@@ -426,12 +495,6 @@ set(RHTV_HDRS
 	include/tv/program.h
 	include/tv/pstream.h
 	include/tv/pwritobj.h
-	include/tv/qnx4/key.h
-	include/tv/qnx4/mouse.h
-	include/tv/qnx4/screen.h
-	include/tv/qnxrtp/key.h
-	include/tv/qnxrtp/mouse.h
-	include/tv/qnxrtp/screen.h
 	include/tv/radiobtn.h
 	include/tv/rect.h
 	include/tv/rescoll.h
@@ -468,32 +531,25 @@ set(RHTV_HDRS
 	include/tv/tvedit.h
 	include/tv/tvobjs.h
 	include/tv/tvutil.h
-	include/tv/unix/key.h
-	include/tv/unix/mouse.h
-	include/tv/unix/screen.h
-	include/tv/unix/xtkey.h
-	include/tv/unix/xtmouse.h
-	include/tv/unix/xtscreen.h
 	include/tv/validate.h
 	include/tv/view.h
 	include/tv/views.h
-	include/tv/win32/key.h
-	include/tv/win32/mouse.h
-	include/tv/win32/screen.h
-	include/tv/win32/win32clip.h
 	include/tv/window.h
-	include/tv/wingr/key.h
-	include/tv/wingr/mouse.h
-	include/tv/wingr/screen.h
-	include/tv/winnt/key.h
-	include/tv/winnt/mouse.h
-	include/tv/winnt/screen.h
-	include/tv/x11/key.h
-	include/tv/x11/mouse.h
-	include/tv/x11/screen.h
 	include/tv/yes_mss.h
 )
 
-add_library(rhtv ${RHTV_HDRS} ${INTL_SRCS} ${COMPAT_SRCS} ${RHTV_SRCS})
+if(WIN32)
+	set(RHTV_PLATFORM_SRCS "${RHTV_WINNT_SRCS}")
+endif(WIN32)
+
+if(UNIX)
+	set(RHTV_PLATFORM_SRCS "${RHTV_UNIX_SRCS}")
+endif(UNIX)
+
+if(HAVE_X11)
+	set(RHTV_PLATFORM_SRCS "${RHTV_UNIX_SRCS} ${RHTV_X11_SRCS}")
+endif(HAVE_X11)
+
+add_library(rhtv ${RHTV_HDRS} ${INTL_SRCS} ${COMPAT_SRCS} ${RHTV_SRCS} ${RHTV_PLATFORM_SRCS} ${RHTV_REGEX_SRCS} ${RHTV_SSC_SRCS})
 
 ADD_SUBDIRECTORY(examples EXCLUDE_FROM_ALL)
