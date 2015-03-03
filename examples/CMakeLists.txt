@@ -119,8 +119,6 @@ target_link_libraries(msgcls rhtv ${CURSES_LIBRARIES})
 add_executable(progba
 	progba/tprogbar.h
 	progba/example.cpp
-	progba/makerez.cpp
-	progba/readrez.cpp
 	progba/tprogbar.cpp
 )
 target_link_libraries(progba rhtv ${CURSES_LIBRARIES})
