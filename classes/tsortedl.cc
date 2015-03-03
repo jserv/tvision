@@ -5,7 +5,7 @@
  *      All Rights Reserved.
  *
 
-Modified by Robert H”hne to be used for RHIDE.
+Modified by Robert Hï¿½hne to be used for RHIDE.
 Modified by Salvador E. Tropea to add functionality.
 
  *
@@ -99,7 +99,7 @@ void TSortedListBox::handleEvent(TEvent& event)
                 if( searchPos == USHRT_MAX )
                     shiftState = shiftKeys;
                 }
-            else if( (event.keyDown.charScan.charCode == '.') )
+            else if( event.keyDown.charScan.charCode == '.' )
                 {
                 char *loc = strchr( curString+
                                     (searchPos==USHRT_MAX ? 0 : searchPos), '.' );
