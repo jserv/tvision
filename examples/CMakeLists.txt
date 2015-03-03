@@ -190,3 +190,4 @@ add_executable(viewers
 )
 target_link_libraries(viewers rhtv ${CURSES_LIBRARIES})
 
+ADD_SUBDIRECTORY(tutorial)
