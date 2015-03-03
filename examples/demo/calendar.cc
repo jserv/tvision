@@ -43,7 +43,7 @@ char TCalendarView::oupArrowChar ='\036';
 char TCalendarView::downArrowChar ='\037';
 char TCalendarView::odownArrowChar='\037';
 
-static char *monthNames[] = {
+static const char *monthNames[] = {
     "",
     "January",  "February", "March",    "April",    "May",      "June",
     "July",     "August",   "September","October",  "November", "December"
@@ -195,9 +195,9 @@ void TCalendarView::handleEvent(TEvent& event)
     TPoint point;
 
     TView::handleEvent(event);
-    if (state && sfSelected)
+    if (state & sfSelected)
         {
-        if ( (event.what & evMouse) && (evMouseDown || evMouseAuto) )
+        if ( (event.what & evMouse) & (evMouseDown | evMouseAuto) )
             {
             point = makeLocal(event.mouse.where);
             if (point.x == 0 && point.y == 0)
