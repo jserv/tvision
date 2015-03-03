@@ -242,7 +242,7 @@ ushort         TVCodePage::Similar2[]=
  '_', // 156  double low line (_ double)
  '3', // 157  vulgar fraction three quarters
  ',', // 158  cedilla
- '"', // 159  diaeresis (di‚resis, umlaut)
+ '"', // 159  diaeresis (di\x82resis, umlaut)
  '1', // 15a  superscript one
  '3', // 15b  superscript three
  '"', // 15c  double acute accent
@@ -262,34 +262,34 @@ ushort         TVCodePage::Similar2[]=
  ' ', // 0x19A free slot
  'N', // 0x19B number
  // ISO-5 cyrillics:
- 'D', // 19C capital letter dje (Serbocroatian) (¢)-5
- 'd', // 19D small letter dje (Serbocroatian) (ò)-5
- 'G', // 19E capital letter gje (£)-5
- 'g', // 19F small letter gje (ó)-5
- 'Y', // 1A0 capital letter yi (Ukrainian) (¦)-5
- 'L', // 1A1 capital letter lje (©)-5
- 'l', // 1A2 small letter lje (ù)-5
- 'N', // 1A3 capital letter nje (ª)-5
- 'n', // 1A4 small letter nje (ú)-5
- 'T', // 1A5 capital letter tshe (Serbocroatian) («)-5
- 't', // 1A6 small letter tshe (Serbocroatian) (û)-5
- 'K', // 1A7 capital letter kje (¬)-5
- 'k', // 1A8 small letter kje (ü)-5
- 'V', // 1A9 capital letter short U (Byelorussian) (®)-5
- 'v', // 1AA small letter short U (Byelorussian) (ş)-5
- 'D', // 1AB capital letter dzhe (¯)-5
- 'd', // 1AC small letter dzhe (ÿ)-5
+ 'D', // 19C capital letter dje (Serbocroatian) (\xa2)-5
+ 'd', // 19D small letter dje (Serbocroatian) (\xf2)-5
+ 'G', // 19E capital letter gje (\xa3)-5
+ 'g', // 19F small letter gje (\xf3)-5
+ 'Y', // 1A0 capital letter yi (Ukrainian) (\xa6)-5
+ 'L', // 1A1 capital letter lje (\xa9)-5
+ 'l', // 1A2 small letter lje (\xf9)-5
+ 'N', // 1A3 capital letter nje (\xaa)-5
+ 'n', // 1A4 small letter nje (\xfa)-5
+ 'T', // 1A5 capital letter tshe (Serbocroatian) (\xab)-5
+ 't', // 1A6 small letter tshe (Serbocroatian) (\xfb)-5
+ 'K', // 1A7 capital letter kje (\xac)-5
+ 'k', // 1A8 small letter kje (\xfc)-5
+ 'V', // 1A9 capital letter short U (Byelorussian) (\xae)-5
+ 'v', // 1AA small letter short U (Byelorussian) (\xfe)-5
+ 'D', // 1AB capital letter dzhe (\xaf)-5
+ 'd', // 1AC small letter dzhe (\xff)-5
  // Windows CP 1251 (russian)
- '"', // 1AD double low-9 quotation mark („)-cp1251
- '.', // 1AE horizontal ellipsis         (…)-cp1251
- '|', // 1AF dagger                      (†)-cp1251
- '|', // 1B0 double dagger               (‡)-cp1251
- '%', // 1B1 per mille sign              (‰)-cp1251
- '"', // 1B2 left double quotation mark  (“)-cp1251
- '"', // 1B3 right double quotation mark (”)-cp1251
- 'T', // 1B4 trade mark sign             (™)-cp1251
- 0x16A, // 1B5 cyrillic capital letter ghe with upturn, default to GHE (¥)-cp1251
- 0x17F, // 1B6 cyrillic small letter ghe with upturn, default to ghe   (´)-cp1251
+ '"', // 1AD double low-9 quotation mark (\x84)-cp1251
+ '.', // 1AE horizontal ellipsis         (\x85)-cp1251
+ '|', // 1AF dagger                      (\x86)-cp1251
+ '|', // 1B0 double dagger               (\x87)-cp1251
+ '%', // 1B1 per mille sign              (\x89)-cp1251
+ '"', // 1B2 left double quotation mark  (\x93)-cp1251
+ '"', // 1B3 right double quotation mark (\x94)-cp1251
+ 'T', // 1B4 trade mark sign             (\x99)-cp1251
+ 0x16A, // 1B5 cyrillic capital letter ghe with upturn, default to GHE (\xa5)-cp1251
+ 0x17F, // 1B6 cyrillic small letter ghe with upturn, default to ghe   (\xb4)-cp1251
  '?',   // 1B7 That's a ? inside a circle, it means the character is unknown
  'O', // 1B8 latin capital ligature OE
  'o', // 1B9 latin small ligature oe
@@ -304,15 +304,15 @@ ushort         TVCodePage::Similar2[]=
  'v', // 1C1  downwards arrow with corner leftwards
  'Y', // 1C2  latin capital letter y with diaeresis
  ' ', // 1C3  free
- 0xB3,// 1C4  box drawings light up ()-1 linux
- 0xC4,// 1C5  box drawings light right (‚)-1 linux
- 0xB3,// 1C6  box drawings light down („)-1 linux
- 0xC4,// 1C7  box drawings light left (ˆ)-1 linux
+ 0xB3,// 1C4  box drawings light up (\x81)-1 linux
+ 0xC4,// 1C5  box drawings light right (\x82)-1 linux
+ 0xB3,// 1C6  box drawings light down (\x84)-1 linux
+ 0xC4,// 1C7  box drawings light left (\x88)-1 linux
  ' ', // 1C8  free
- 0xBA,// 1C9  box drawings heavy up (‘)-1 linux
- 0xCD,// 1CA  box drawings heavy right (’)-1 linux
- 0xBA,// 1CB  box drawings heavy down (”)-1 linux
- 0xCD,// 1CC  box drawings heavy left (˜)-1 linux
+ 0xBA,// 1C9  box drawings heavy up (\x91)-1 linux
+ 0xCD,// 1CA  box drawings heavy right (\x92)-1 linux
+ 0xBA,// 1CB  box drawings heavy down (\x94)-1 linux
+ 0xCD,// 1CC  box drawings heavy left (\x98)-1 linux
  0x1A8,//1CD  latin small letter kra
  'N','n', // Latin letter eng
  // Circumflex 1D0-1DD
@@ -474,8 +474,8 @@ CodePage TVCodePage::stPC437=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
    240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255 },
- "‚†„‡€š‘’”™¤¥",
- "ƒ…ˆ‰Š‹Œ“•–—˜ ¡¢£á",0,0
+ "\x82\x90\x86\x8f\x84\x8e\x87\x80\x81\x9a\x91\x92\x94\x99\xa4\xa5",
+ "\x83\x85\x88\x89\x8a\x8b\x8c\x8d\x93\x95\x96\x97\x98\xa0\xa1\xa2\xa3\xe1",0,0
 };
 
 CodePage TVCodePage::stPC737=
@@ -489,8 +489,8 @@ CodePage TVCodePage::stPC737=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    559,565,566,567,579,568,569,570,580,571,572,573,574,575,576,577,
    578,241,342,343,631,632,246,344,248,345,250,346,347,253,254,255 },
- "˜€™¯–›ƒœ„­”š‚† ˆ¥¡‰¢Š£‹¤Œ¦§¨©‘«’à—ª‘®•¬“…áêâëãìåíæîéğçïäôèõ",
- "Ÿ",0,0
+ "\x98\x80\x99\x81\xaf\x96\x9b\x83\x9c\x84\xad\x94\x9a\x82\x9e\x86\xa0\x88\xa5\x8d\xa1\x89\xa2\x8a\xa3\x8b\xa4\x8c\xa6\x8e\xa7\x8f\xa8\x90\xa9\x91\xab\x92\xe0\x97\xaa\x91\xae\x95\xac\x93\x9d\x85\xe1\xea\xe2\xeb\xe3\xec\xe5\xed\xe6\xee\xe9\xf0\xe7\xef\xe4\xf4\xe8\xf5",
+ "\x9f",0,0
 };
 
 CodePage TVCodePage::stPC775=
@@ -505,8 +505,8 @@ CodePage TVCodePage::stPC775=
    268,225,500,267,285,288,230,258,512,513,544,545,515,496,514, 39,
    341,241,434,343, 20, 21,246,429,248,249,250,346,347,253,254,255
  },
- "‡€‹Šš‚ƒ „…•†ˆ­‰íŒ¡¥‘’“â”™˜—›¢à¤£ĞµÑ¶Ò·Ó¸Ô½Õ¾ÖÆ×ÇØÏçãäåéèëêìî",
- "áæ",0,0
+ "\x87\x80\x8b\x8a\x81\x9a\x82\x90\x83\xa0\x84\x8e\x85\x95\x86\x8f\x88\xad\x89\xed\x8c\xa1\xa5\x8d\x91\x92\x93\xe2\x94\x99\x98\x97\x9b\x9d\xa2\xe0\xa4\xa3\xd0\xb5\xd1\xb6\xd2\xb7\xd3\xb8\xd4\xbd\xd5\xbe\xd6\xc6\xd7\xc7\xd8\xcf\xe7\xe3\xe4\xe5\xe9\xe8\xeb\xea\xec\xee",
+ "\xe1\xe6",0,0
 };
 
 CodePage TVCodePage::stPC850=
@@ -520,8 +520,8 @@ CodePage TVCodePage::stPC850=
    321,323,290,280,276,337,265,291,281,217,218,219,220,338,277,223,
    268,225,292,278,285,288,230,332,333,271,293,279,261,272,339,340,
    341,241,342,343, 20, 21,246,344,248,345,250,346,347,253,254,255 },
- "‡€š‚ƒ¶„…·†ˆÒ‰ÓŠÔ‹ØŒ×Ş‘’“â”™•ã–ê—ë› µ¡Ö¢à£é¤¥ÆÇĞÑäåçèìí",
- "˜ÏÕáæ",0,0
+ "\x87\x80\x81\x9a\x82\x90\x83\xb6\x84\x8e\x85\xb7\x86\x8f\x88\xd2\x89\xd3\x8a\xd4\x8b\xd8\x8c\xd7\x8d\xde\x91\x92\x93\xe2\x94\x99\x95\xe3\x96\xea\x97\xeb\x9b\x9d\xa0\xb5\xa1\xd6\xa2\xe0\xa3\xe9\xa4\xa5\xc6\xc7\xd0\xd1\xe4\xe5\xe7\xe8\xec\xed",
+ "\x98\xcf\xd5\xe1\xe6",0,0
 };
 
 CodePage TVCodePage::stPC852=
@@ -535,8 +535,8 @@ CodePage TVCodePage::stPC852=
    321,323,300,280,324,302,265,291,358,217,218,219,220,310,283,223,
    268,225,292,267,258,295,304,297,269,271,259,274,261,272,308,340,
    341,348,349,350,351, 21,246,344,248,345,352,286,303,296,254,255 },
- "‡€š‚ƒ¶„…Ş†ˆ‰Ó‹ŠŒ×«’‘“â”™–•˜—Ÿ¬ µ¡Ö¢à£é¥¤§¦©¨­¸Ø·¾½ÇÆĞÑåÕîİäãçæêèûëìíıü",
- "›œÏÒÔá",0,0
+ "\x87\x80\x81\x9a\x82\x90\x83\xb6\x84\x8e\x85\xde\x86\x8f\x88\x9d\x89\xd3\x8b\x8a\x8c\xd7\xab\x8d\x92\x91\x93\xe2\x94\x99\x96\x95\x98\x97\x9f\xac\xa0\xb5\xa1\xd6\xa2\xe0\xa3\xe9\xa5\xa4\xa7\xa6\xa9\xa8\xad\xb8\xd8\xb7\xbe\xbd\xc7\xc6\xd0\xd1\xe5\xd5\xee\xdd\xe4\xe3\xe7\xe6\xea\xe8\xfb\xeb\xec\xed\xfd\xfc",
+ "\x9b\x9c\xcf\xd2\xd4\xe1",0,0
 };
 
 // PC855 Russian DOS code page
@@ -551,7 +551,7 @@ CodePage TVCodePage::stPC855=
    390,367,391,591,392,592,600,593,393,217,218,219,220,368,406,223,
    380,601,594,602,595,394,596,395,369,385,364,382,588,403,377,411,
    341,402,376,386,409,399,373,404,378,400,374,398,372, 21,254,255 },
- "€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­µ¶·¸½¾ÆÇĞÑÒÓÔÕÖ×ØİŞàáâãäåæçèéêëìíîñòóôõö÷øùúûü",
+ "\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xb5\xb6\xb7\xb8\xbd\xbe\xc6\xc7\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xdd\xde\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc",
  "",0,0
 };
 
@@ -566,8 +566,8 @@ CodePage TVCodePage::stPC857=
    167,166,290,280,276,276,265,291,281,217,218,219,220,338,277,223,
    268,225,292,278,285,288,230,230,334,271,293,279,141,152,339,340,
    341,241,241,343, 20, 21,246,344,248,345,250,346,347,253,254,255 },
- "‡€š‚ƒ¶„…·†ˆÒ‰ÓŠÔ‹ØŒ×˜‘’“â”™•ã–ê—ë›Ÿ µ¡Ö£é¤¥§¦ÆÇ¢àŞìäå",
- "Õáæçí",0,0
+ "\x87\x80\x81\x9a\x82\x90\x83\xb6\x84\x8e\x85\xb7\x86\x8f\x88\xd2\x89\xd3\x8a\xd4\x8b\xd8\x8c\xd7\x8d\x98\x91\x92\x93\xe2\x94\x99\x95\xe3\x96\xea\x97\xeb\x9b\x9d\x9f\x9e\xa0\xb5\xa1\xd6\xa3\xe9\xa4\xa5\xa7\xa6\xc6\xc7\xa2\xe0\xde\xec\xe4\xe5",
+ "\xd5\xe1\xe6\xe7\xed",0,0
 };
 
 CodePage TVCodePage::stPC860=
@@ -581,8 +581,8 @@ CodePage TVCodePage::stPC860=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
    240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255 },
- "‡€š‚ƒ„…‘ †ˆ‰Š’¡‹“Œ˜”™•©£–—¢Ÿ¤¥",
- "á",0,0
+ "\x87\x80\x81\x9a\x82\x90\x83\x8f\x84\x8e\x85\x91\xa0\x86\x88\x89\x8a\x92\xa1\x8b\x93\x8c\x8d\x98\x94\x99\x95\xa9\xa3\x96\x97\x9d\xa2\x9f\xa4\xa5",
+ "\xe1",0,0
 };
 
 CodePage TVCodePage::stPC861=
@@ -596,8 +596,8 @@ CodePage TVCodePage::stPC861=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
    240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255 },
- "š‚„†‡€Œ‹•‘’”™˜—› ¤¡¥¢¦£§",
- "ƒ…ˆ‰Š“–àáâãåäæçèéêëíîŸ",0,0
+ "\x81\x9a\x82\x90\x84\x8e\x86\x8f\x87\x80\x8c\x8b\x95\x8d\x91\x92\x94\x99\x98\x97\x9b\x9d\xa0\xa4\xa1\xa5\xa2\xa6\xa3\xa7",
+ "\x83\x85\x88\x89\x8a\x93\x96\xe0\xe1\xe2\xe3\xe5\xe4\xe6\xe7\xe8\xe9\xea\xeb\xed\xee\x9f",0,0
 };
 
 CodePage TVCodePage::stPC863=
@@ -611,8 +611,8 @@ CodePage TVCodePage::stPC863=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
    240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255 },
- "‡€š‚ƒ„…ˆ’‰”Š‘‹•Œ¨“™–—",
- "˜¢£á",0,0
+ "\x87\x80\x81\x9a\x82\x90\x83\x84\x85\x8e\x88\x92\x89\x94\x8a\x91\x8b\x95\x8c\xa8\x93\x99\x96\x9e\x97\x9d",
+ "\x98\xa2\xa3\xe1",0,0
 };
 
 CodePage TVCodePage::stPC865=
@@ -626,8 +626,8 @@ CodePage TVCodePage::stPC865=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
    240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255 },
- "‡€š›‚„†‘’¤¥”™",
- "ƒ…ˆ‰Š‹Œ“•–—˜ ¡¢£¯á",0,0
+ "\x87\x80\x81\x9a\x9b\x9d\x82\x90\x84\x8e\x86\x8f\x91\x92\xa4\xa5\x94\x99",
+ "\x83\x85\x88\x89\x8a\x8b\x8c\x8d\x93\x95\x96\x97\x98\xa0\xa1\xa2\xa3\xaf\xe1",0,0
 };
 
 CodePage TVCodePage::stPC869=
@@ -641,8 +641,8 @@ CodePage TVCodePage::stPC869=
    628,629,232,630,563,234,224,613,546,217,218,219,220,235,238,223,
    547,548,549,550,614,551,615,552,553,616,227,554,229,555,231,340,
    341,241,556,237,557, 21,558,564,248,345,559,580,582,571,254,255 },
- "›†Ÿ ‘¢’£•û–ı˜Ö¤×¥Ø¦İ§Ş¨à©áªâ¬ã­äµå¶æ·ç¸è½é¾êÆëÇìÏíÏîĞòÑóÒôÓöÔúÕ",
- "¡ü",0,0
+ "\x9b\x86\x9d\x8d\x9e\x8f\x9f\x90\xa0\x91\xa2\x92\xa3\x95\xfb\x96\xfd\x98\xd6\xa4\xd7\xa5\xd8\xa6\xdd\xa7\xde\xa8\xe0\xa9\xe1\xaa\xe2\xac\xe3\xad\xe4\xb5\xe5\xb6\xe6\xb7\xe7\xb8\xe8\xbd\xe9\xbe\xea\xc6\xeb\xc7\xec\xcf\xed\xcf\xee\xd0\xf2\xd1\xf3\xd2\xf4\xd3\xf6\xd4\xfa\xd5",
+ "\xa1\xfc",0,0
 };
 
 CodePage TVCodePage::ISO8879_1=
@@ -656,8 +656,8 @@ CodePage TVCodePage::ISO8879_1=
    323,165,278,268,292,288,153,334,320,279,271,293,154,272,333,225,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    321,164,149,162,147,285,148,246,318,151,163,150,129,261,332,152 },
- "àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "µßÿ",0,0
+ "\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xb5\xdf\xff",0,0
 };
 
 ushort TVCodePage::LowCrazyCharsRemaped[] =
@@ -682,8 +682,8 @@ CodePage TVCodePage::ISO8859_1_Lat1=
    323,165,278,268,292,288,153,334,320,279,271,293,154,272,333,225,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    321,164,149,162,147,285,148,246,318,151,163,150,129,261,332,152 },
- "àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜÿıİşŞ",
- "µß",
+ "\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xff\xfd\xdd\xfe\xde",
+ "\xb5\xdf",
  128,LowCrazyCharsRemaped
 };
 
@@ -698,8 +698,8 @@ CodePage TVCodePage::ISO8859_1u_Lat1=
    456,457,458,200,459,186,201,204,460,188,205,202,187,185,203,206,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    321,164,149,162,147,285,148,246,318,151,163,150,129,261,332,152 },
- "à€áâ‚ãƒä„å…æ†ç‡èˆé‰êŠë‹ìŒíîïğñ‘ò’ó“ô”õ•ö–ø˜ù™úšû›üœÿış",
- "µŸ",
+ "\xe0\x80\xe1\x81\xe2\x82\xe3\x83\xe4\x84\xe5\x85\xe6\x86\xe7\x87\xe8\x88\xe9\x89\xea\x8a\xeb\x8b\xec\x8c\xed\x8d\xee\x8e\xef\x8f\xf0\x90\xf1\x91\xf2\x92\xf3\x93\xf4\x94\xf5\x95\xf6\x96\xf8\x98\xf9\x99\xfa\x9a\xfb\x9b\xfc\x9c\xff\xfd\x9d\xfe\x9e",
+ "\xb5\x9f",
  128,LowCrazyCharsRemaped
 };
 
@@ -714,7 +714,7 @@ CodePage TVCodePage::ISO8879_2=
    323,267,302,268,292,354,153,334,303,282,271,274,154,272,310,225,
    259,160,131,328,132,257,256,135,294,130,312,137,358,161,140,324,
    321,258,295,162,147,353,148,246,296,283,163,286,129,261,308,352 },
- "±¡³£µ¥¶¦¹©ºª»«¼¬¾®¿¯àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
+ "\xb1\xa1\xb3\xa3\xb5\xa5\xb6\xa6\xb9\xa9\xba\xaa\xbb\xab\xbc\xac\xbe\xae\xbf\xaf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
  "",0,0
 };
 
@@ -729,7 +729,7 @@ CodePage TVCodePage::ISO8859_2_Lat2=
   323,267,302,268,292,354,153,334,303,282,271,274,154,272,310,225,
   259,160,131,328,132,257,256,135,294,130,312,137,358,161,140,324,
   321,258,295,162,147,353,148,246,296,283,163,286,129,261,308,352 },
- "±¡³£µ¥¶¦¹©ºª»«¼¬¾®¿¯àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
+ "\xb1\xa1\xb3\xa3\xb5\xa5\xb6\xa6\xb9\xa9\xba\xaa\xbb\xab\xbc\xac\xbe\xae\xbf\xaf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
  "",0,0
 };
 
@@ -744,7 +744,7 @@ CodePage TVCodePage::ISO8859_2u_Lat2=
   456,457,458,200,459,186,201,204,460,188,205,202,187,185,203,206,
   259,160,131,328,132,257,256,135,294,130,312,137,358,161,140,324,
   321,258,295,162,147,353,148,246,296,283,163,286,129,261,308,352 },
- "±¡³£µ¥¶¦¹©ºª»«¼¬¾®¿¯à€áâ‚ãƒä„å…æ†ç‡èˆé‰êŠë‹ìŒíîïğñ‘ò’ó“ô”õ•ö–ø˜ù™úšû›üœış",
+ "\xb1\xa1\xb3\xa3\xb5\xa5\xb6\xa6\xb9\xa9\xba\xaa\xbb\xab\xbc\xac\xbe\xae\xbf\xaf\xe0\x80\xe1\x81\xe2\x82\xe3\x83\xe4\x84\xe5\x85\xe6\x86\xe7\x87\xe8\x88\xe9\x89\xea\x8a\xeb\x8b\xec\x8c\xed\x8d\xee\x8e\xef\x8f\xf0\x90\xf1\x91\xf2\x92\xf3\x93\xf4\x94\xf5\x95\xf6\x96\xf8\x98\xf9\x99\xfa\x9a\xfb\x9b\xfc\x9c\xfd\x9d\xfe\x9e",
  "",0,0
 };
 
@@ -760,8 +760,8 @@ CodePage TVCodePage::ISO8859_2_Sun=
   282,271,274,154,272,310,225,587,216,217,218,219,220,221,222,223,
   259,160,131,328,132,257,256,135,294,130,312,137,358,161,140,324,
   321,258,295,162,147,353,148,246,296,283,163,286,129,261,308,352 },
- "‘“ƒ•…–†–‰šŠ›‹œŒŸà á¡â¢ã£ä¤å¥æ¦ç§è¨é©êªë«ì¬í­î®ï¯ğµñ¶ó¸ô½õ¾öÆøÏùĞúÑûÒüÓıÔşÕ",
- "Ö",0,0
+ "\x91\x81\x93\x83\x95\x85\x96\x86\x96\x89\x9a\x8a\x9b\x8b\x9c\x8c\x9e\x8e\x9f\x8f\xe0\xa0\xe1\xa1\xe2\xa2\xe3\xa3\xe4\xa4\xe5\xa5\xe6\xa6\xe7\xa7\xe8\xa8\xe9\xa9\xea\xaa\xeb\xab\xec\xac\xed\xad\xee\xae\xef\xaf\xf0\xb5\xf1\xb6\xf3\xb8\xf4\xbd\xf5\xbe\xf6\xc6\xf8\xcf\xf9\xd0\xfa\xd1\xfb\xd2\xfc\xd3\xfd\xd4\xfe\xd5",
+ "\xd6",0,0
 };
 
 CodePage TVCodePage::ISO8859_2e_Lat2=
@@ -775,7 +775,7 @@ CodePage TVCodePage::ISO8859_2e_Lat2=
   323,267,302,268,292,354,153,334,303,282,271,274,154,272,310,225,
   259,160,131,328,132,257,256,135,294,130,312,137,358,161,140,324,
   321,258,295,162,147,353,148,246,296,283,163,286,129,261,308,352 },
- "±¡³£µ¥¶¦¹©ºª»«¼¬¾®¿¯àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
+ "\xb1\xa1\xb3\xa3\xb5\xa5\xb6\xa6\xb9\xa9\xba\xaa\xbb\xab\xbc\xac\xbe\xae\xbf\xaf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
  "",0,0
 };
 
@@ -791,8 +791,8 @@ CodePage TVCodePage::ISO8859_3=
    133,160,131,0x20,132,481,465,135,138,130,136,137,141,161,140,139,
    0x20,164,149,162,147,486,148,246,467,151,163,150,129,509,473,352
  },
- "±¡¶¦¹©ºª»«¼¬¿¯àÀáÁâÂäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "ßµ",0,0
+ "\xb1\xa1\xb6\xa6\xb9\xa9\xba\xaa\xbb\xab\xbc\xac\xbf\xaf\xe0\xc0\xe1\xc1\xe2\xc2\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xdf\xb5",0,0
 };
 
 CodePage TVCodePage::ISO8859_4=
@@ -807,8 +807,8 @@ CodePage TVCodePage::ISO8859_4=
    584,160,131,284,132,134,145,523,294,130,312,137,543,161,140,499,
    321,515,501,513,147,285,148,246,318,525,163,150,129,521,503,352
  },
- "±¡³£µ¥¶¦¹©ºª»«¼¬¾®¿½àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "ß¢",0,0
+ "\xb1\xa1\xb3\xa3\xb5\xa5\xb6\xa6\xb9\xa9\xba\xaa\xbb\xab\xbc\xac\xbe\xae\xbf\xbd\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xdf\xa2",0,0
 };
 
 // PC866 Russian DOS code page
@@ -823,7 +823,7 @@ CodePage TVCodePage::stPC866=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406,
    605,604,407,408,610,608,409,410,248,249,250,251,411,331,254,255 },
- " €¡¢‚£ƒ¤„¥…¦†§‡¨ˆ©‰ªŠ«‹¬Œ­®¯àá‘â’ã“ä”å•æ–ç—è˜é™êšë›ìœíîïŸñğóòõô÷ö",
+ "\xa0\x80\xa1\x81\xa2\x82\xa3\x83\xa4\x84\xa5\x85\xa6\x86\xa7\x87\xa8\x88\xa9\x89\xaa\x8a\xab\x8b\xac\x8c\xad\x8d\xae\x8e\xaf\x8f\xe0\x90\xe1\x91\xe2\x92\xe3\x93\xe4\x94\xe5\x95\xe6\x96\xe7\x97\xe8\x98\xe9\x99\xea\x9a\xeb\x9b\xec\x9c\xed\x9d\xee\x9e\xef\x9f\xf1\xf0\xf3\xf2\xf5\xf4\xf7\xf6",
  "",0,0
 };
 
@@ -839,12 +839,12 @@ CodePage TVCodePage::ISO8859_5=
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406,
    411,604,413,415,408,606,607,608,609,418,420,422,424, 21,426,428 },
- "ñ¡ò¢ó£ô¤õ¥ö¦÷§ø¨ù©úªû«ü¬ş®ÿ¯Ğ°Ñ±Ò²Ó³Ô´ÕµÖ¶×·Ø¸Ù¹ÚºÛ»Ü¼İ½Ş¾ß¿àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏ",
+ "\xf1\xa1\xf2\xa2\xf3\xa3\xf4\xa4\xf5\xa5\xf6\xa6\xf7\xa7\xf8\xa8\xf9\xa9\xfa\xaa\xfb\xab\xfc\xac\xfe\xae\xff\xaf\xd0\xb0\xd1\xb1\xd2\xb2\xd3\xb3\xd4\xb4\xd5\xb5\xd6\xb6\xd7\xb7\xd8\xb8\xd9\xb9\xda\xba\xdb\xbb\xdc\xbc\xdd\xbd\xde\xbe\xdf\xbf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf",
  "",0,0
 };
 
 // KOD OBMENA INFORMATSIEY - 8bit RUSSKIY
-// ëïä ïâíåîá éîæïòíáôóéåù I think that's close to the original ;-)
+// \xeb\xef\xe4 \xef\xe2\xed\xe5\xee\xe1 \xe9\xee\xe6\xef\xf2\xed\xe1\xf4\xf3\xe9\xe5\xf9 I think that's close to the original ;-)
 CodePage TVCodePage::KOI_8r=
 { "KOI-8r (Russian)",
   100000,
@@ -856,7 +856,7 @@ CodePage TVCodePage::KOI_8r=
    393,406,601,602,394,395,385,382,403,402,386,399,404,400,398,401,
    379,360,361,371,363,589,370,362,597,365,366,590,367,591,592,593,
    368,380,594,595,596,369,364,588,377,376,409,373,378,374,372,375 },
- "ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÏïĞğÑñÒòÓóÔôÕõÖöØøÙùÚúÛûÜüİıŞşßÿ£³",
+ "\xc0\xe0\xc1\xe1\xc2\xe2\xc3\xe3\xc4\xe4\xc5\xe5\xc6\xe6\xc7\xe7\xc8\xe8\xc9\xe9\xca\xea\xcb\xeb\xcc\xec\xcd\xed\xce\xee\xcf\xef\xd0\xf0\xd1\xf1\xd2\xf2\xd3\xf3\xd4\xf4\xd5\xf5\xd6\xf6\xd8\xf8\xd9\xf9\xda\xfa\xdb\xfb\xdc\xfc\xdd\xfd\xde\xfe\xdf\xff\xa3\xb3",
  "",0,0
 };
 
@@ -872,7 +872,7 @@ CodePage TVCodePage::KOI_8crl=
    393,406,601,602,394,395,385,382,403,402,386,399,404,400,398,401,
    379,360,361,371,363,589,370,362,597,365,366,590,367,591,592,593,
    368,380,594,595,596,369,364,588,377,376,409,373,378,374,372,375 },
- "£³¤´¥µ¦¶§·¨¸©¹ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÏïĞğÑñÒòÓóÔôÕõÖö×÷ØøÙùÚúÛûÜüİıŞşßÿ",
+ "\xa3\xb3\xa4\xb4\xa5\xb5\xa6\xb6\xa7\xb7\xa8\xb8\xa9\xb9\xc0\xe0\xc1\xe1\xc2\xe2\xc3\xe3\xc4\xe4\xc5\xe5\xc6\xe6\xc7\xe7\xc8\xe8\xc9\xe9\xca\xea\xcb\xeb\xcc\xec\xcd\xed\xce\xee\xcf\xef\xd0\xf0\xd1\xf1\xd2\xf2\xd3\xf3\xd4\xf4\xd5\xf5\xd6\xf6\xd7\xf7\xd8\xf8\xd9\xf9\xda\xfa\xdb\xfb\xdc\xfc\xdd\xfd\xde\xfe\xdf\xff",
  "",0,0
 };
 
@@ -888,7 +888,7 @@ CodePage TVCodePage::ISO_IR_111=
    393,406,601,602,394,395,385,382,403,402,386,399,404,400,398,401,
    379,360,361,371,363,589,370,362,597,365,366,590,367,591,592,593,
    368,380,594,595,596,369,364,588,377,376,409,373,378,374,372,375 },
- "¡±¢²£³¤´¥µ¦¶§·¨¸©¹ªº«»¬¼®¾¯¿ÀàÁáÂâÃãÄäÅåÆæÇçÈèÉéÊêËëÌìÍíÎîÏïĞğÑñÒòÓóÔôÕõÖö×÷ØøÙùÚúÛûÜüİıŞşßÿ",
+ "\xa1\xb1\xa2\xb2\xa3\xb3\xa4\xb4\xa5\xb5\xa6\xb6\xa7\xb7\xa8\xb8\xa9\xb9\xaa\xba\xab\xbb\xac\xbc\xae\xbe\xaf\xbf\xc0\xe0\xc1\xe1\xc2\xe2\xc3\xe3\xc4\xe4\xc5\xe5\xc6\xe6\xc7\xe7\xc8\xe8\xc9\xe9\xca\xea\xcb\xeb\xcc\xec\xcd\xed\xce\xee\xcf\xef\xd0\xf0\xd1\xf1\xd2\xf2\xd3\xf3\xd4\xf4\xd5\xf5\xd6\xf6\xd7\xf7\xd8\xf8\xd9\xf9\xda\xfa\xdb\xfb\xdc\xfc\xdd\xfd\xde\xfe\xdf\xff",
  "",0,0
 };
 
@@ -904,7 +904,7 @@ CodePage TVCodePage::ISO_IR_153=
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406,
    0x20,604,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20 },
- "ñ¡Ğ°Ñ±Ò²Ó³Ô´ÕµÖ¶×·Ø¸Ù¹ÚºÛ»Ü¼İ½Ş¾ß¿àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏ",
+ "\xf1\xa1\xd0\xb0\xd1\xb1\xd2\xb2\xd3\xb3\xd4\xb4\xd5\xb5\xd6\xb6\xd7\xb7\xd8\xb8\xd9\xb9\xda\xba\xdb\xbb\xdc\xbc\xdd\xbd\xde\xbe\xdf\xbf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf",
  "",0,0
 };
 
@@ -921,8 +921,8 @@ CodePage TVCodePage::CP10007=
     45,341,434,435, 96, 39,246,429,425,426,427,428,411,605,604,406,
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
     601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,331 },
- "à€áâ‚ãƒä„å…æ†ç‡èˆé‰êŠë‹ìŒíîïğñ‘ò’ó“ô”õ•ö–÷—ø˜ù™úšû›üœışßŸ¬«¯®¹¸»º½¼¿¾ÌËÎÍŞİÙØÛÚÀ·ÏÁ¶Æ",
- "´µÄ",0,0
+ "\xe0\x80\xe1\x81\xe2\x82\xe3\x83\xe4\x84\xe5\x85\xe6\x86\xe7\x87\xe8\x88\xe9\x89\xea\x8a\xeb\x8b\xec\x8c\xed\x8d\xee\x8e\xef\x8f\xf0\x90\xf1\x91\xf2\x92\xf3\x93\xf4\x94\xf5\x95\xf6\x96\xf7\x97\xf8\x98\xf9\x99\xfa\x9a\xfb\x9b\xfc\x9c\xfd\x9d\xfe\x9e\xdf\x9f\xac\xab\xaf\xae\xb9\xb8\xbb\xba\xbd\xbc\xbf\xbe\xcc\xcb\xce\xcd\xde\xdd\xd9\xd8\xdb\xda\xc0\xb7\xcf\xc1\xb6\xc6",
+ "\xb4\xb5\xc4",0,0
 };
 
 // Mac OS Ukrainian
@@ -937,8 +937,8 @@ CodePage TVCodePage::CP100072=
     45,341,434,435, 96, 39,246,429,425,426,427,428,411,605,604,406,
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,331 },
- "à€áâ‚ãƒä„å…æ†ç‡èˆé‰êŠë‹ìŒíîïğñ‘ò’ó“ô”õ•ö–÷—ø˜ù™úšû›üœışßŸ¶¢¬«¯®À·¹¸»º½¼¿¾ÏÁÌËÎÍÙØÛÚŞİ",
- "§´µÄÆ",0,0
+ "\xe0\x80\xe1\x81\xe2\x82\xe3\x83\xe4\x84\xe5\x85\xe6\x86\xe7\x87\xe8\x88\xe9\x89\xea\x8a\xeb\x8b\xec\x8c\xed\x8d\xee\x8e\xef\x8f\xf0\x90\xf1\x91\xf2\x92\xf3\x93\xf4\x94\xf5\x95\xf6\x96\xf7\x97\xf8\x98\xf9\x99\xfa\x9a\xfb\x9b\xfc\x9c\xfd\x9d\xfe\x9e\xdf\x9f\xb6\xa2\xac\xab\xaf\xae\xc0\xb7\xb9\xb8\xbb\xba\xbd\xbc\xbf\xbe\xcf\xc1\xcc\xcb\xce\xcd\xd9\xd8\xdb\xda\xde\xdd",
+ "\xa7\xb4\xb5\xc4\xc6",0,0
 };
 
 // Osnovnoj Variant Russian
@@ -953,7 +953,7 @@ CodePage TVCodePage::OVR=
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406,
    605,604,340, 96,340, 96, 26, 27, 25, 24,246,241,411,331,0x20,0x20 },
- "Ğ°Ñ±Ò²Ó³Ô´ÕµÖ¶×·Ø¸Ù¹ÚºÛ»Ü¼İ½Ş¾ß¿àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏñğ",
+ "\xd0\xb0\xd1\xb1\xd2\xb2\xd3\xb3\xd4\xb4\xd5\xb5\xd6\xb6\xd7\xb7\xd8\xb8\xd9\xb9\xda\xba\xdb\xbb\xdc\xbc\xdd\xbd\xde\xbe\xdf\xbf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf1\xf0",
  "",0,0
 };
 
@@ -969,7 +969,7 @@ CodePage TVCodePage::AVR=
    0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406,
    605,604,340, 96,340, 96, 26, 27, 25, 24,246,241,411,331,0x20,0x20 },
- " €¡¢‚£ƒ¤„¥…¦†§‡¨ˆ©‰ªŠ«‹¬Œ­®¯àá‘â’ã“ä”å•æ–ç—è˜é™êšë›ìœíîïŸñğ",
+ "\xa0\x80\xa1\x81\xa2\x82\xa3\x83\xa4\x84\xa5\x85\xa6\x86\xa7\x87\xa8\x88\xa9\x89\xaa\x8a\xab\x8b\xac\x8c\xad\x8d\xae\x8e\xaf\x8f\xe0\x90\xe1\x91\xe2\x92\xe3\x93\xe4\x94\xe5\x95\xe6\x96\xe7\x97\xe8\x98\xe9\x99\xea\x9a\xeb\x9b\xec\x9c\xed\x9d\xee\x9e\xef\x9f\xf1\xf0",
  "",0,0
 };
 
@@ -985,7 +985,7 @@ CodePage TVCodePage::U_CodeR=
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406,
    0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20 },
- "Ğ°Ñ±Ò²Ó³Ô´ÕµÖ¶×·Ø¸Ù¹ÚºÛ»Ü¼İ½Ş¾ß¿àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏ",
+ "\xd0\xb0\xd1\xb1\xd2\xb2\xd3\xb3\xd4\xb4\xd5\xb5\xd6\xb6\xd7\xb7\xd8\xb8\xd9\xb9\xda\xba\xdb\xbb\xdc\xbc\xdd\xbd\xde\xbe\xdf\xbf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf",
  "",0,0
 };
 
@@ -1023,7 +1023,7 @@ CodePage TVCodePage::KOI_7=
    96, 97, 98, 99,100,101,102,103,104,105,106,107,108,109,110,111,
   112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127
  },
- "@`AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz[{\\|]}^~á¡â¢ã£ä¤å¥æ¦ç§è¨é©êªë«ì¬í­î®ï¯ğĞñÑòÒóÓôÔõÕöÖ÷×øØùÙúÚ",
+ "@`AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz[{\\|]}^~\xe1\xa1\xe2\xa2\xe3\xa3\xe4\xa4\xe5\xa5\xe6\xa6\xe7\xa7\xe8\xa8\xe9\xa9\xea\xaa\xeb\xab\xec\xac\xed\xad\xee\xae\xef\xaf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xfa\xda",
  "_",
  128,TVCodePage::tbKOI7
 };
@@ -1060,7 +1060,7 @@ CodePage TVCodePage::ISO_IR_147=
    96, 97, 98, 99,100,101,102,103,104,105,106,107,108,109,110,111,
   112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127
  },
- "`@aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ{[|\\}]~^á¡â¢ã£ä¤å¥æ¦ç§è¨é©êªë«ì¬í­î®ï¯ğĞñÑòÒóÓôÔõÕöÖ÷×øØùÙúÚ",
+ "`@aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ{[|\\}]~^\xe1\xa1\xe2\xa2\xe3\xa3\xe4\xa4\xe5\xa5\xe6\xa6\xe7\xa7\xe8\xa8\xe9\xa9\xea\xaa\xeb\xab\xec\xac\xed\xad\xee\xae\xef\xaf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xfa\xda",
  "",
  128,TVCodePage::tbISOIR147
 };
@@ -1097,7 +1097,7 @@ CodePage TVCodePage::ISO_IR_146=
    96, 97, 98, 99,100,101,102,103,104,105,106,107,108,109,110,111,
   112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127
  },
- "`@aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ{[|\\}]~^á¡â¢ã£ä¤å¥æ¦ç§è¨é©êªë«ì¬í­î®ï¯ğĞñÑòÒóÓôÔõÕöÖ÷×øØùÙúÚ",
+ "`@aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ{[|\\}]~^\xe1\xa1\xe2\xa2\xe3\xa3\xe4\xa4\xe5\xa5\xe6\xa6\xe7\xa7\xe8\xa8\xe9\xa9\xea\xaa\xeb\xab\xec\xac\xed\xad\xee\xae\xef\xaf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xfa\xda",
  "",
  128,TVCodePage::tbISOIR146
 };
@@ -1118,8 +1118,8 @@ CodePage TVCodePage::stPC1250=
    323,267,302,268,292,354,153,334,303,283,271,274,154,272,310,225,
    259,160,131,328,132,257,256,135,294,130,312,137,358,161,140,324,
    321,258,295,162,147,353,148,246,296,282,163,286,129,261,308,352 },
- "šŠœŒŸ³£¹¥ºª¾¼¿¯àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "µß",
+ "\x9a\x8a\x9c\x8c\x9f\x8f\x9e\x8e\x9d\x8d\xb3\xa3\xb9\xa5\xba\xaa\xbe\xbc\xbf\xaf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xb5\xdf",
  32,TVCodePage::Low32CharsRemaped
 };
 
@@ -1135,8 +1135,8 @@ CodePage TVCodePage::PC1251=
    594,595,596,369,370,597,371,372,373,374,375,376,377,378,379,380,
    598,381,382,383,384,599,385,386,387,388,389,390,391,392,600,393,
    601,602,394,395,396,603,397,398,399,400,401,402,403,404,405,406 },
- "€ƒšŠœŒŸ¢¡¼£´¥ºª¿¯²³¸¨¾½àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖ÷×øØùÙúÚûÛüÜıİşŞÿß",
- "µ",
+ "\x90\x80\x83\x81\x9a\x8a\x9c\x8c\x9d\x8d\x9e\x8e\x9f\x8f\xa2\xa1\xbc\xa3\xb4\xa5\xba\xaa\xbf\xaf\xb2\xb3\xb8\xa8\xbe\xbd\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde\xff\xdf",
+ "\xb5",
  32,Low32CharsRemaped
 };
 
@@ -1152,8 +1152,8 @@ CodePage TVCodePage::stPC1252=
    323,165,278,268,292,288,153,334,320,279,271,293,154,272,333,225,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    322,164,149,162,147,285,148,246,318,151,163,150,129,261,332,152 },
- "œŒšŠÿŸàÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "ƒµß",
+ "\x9c\x8c\x9a\x8a\x9e\x8e\xff\x9f\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\x83\xb5\xdf",
  32,Low32CharsRemaped
 };
 
@@ -1169,8 +1169,8 @@ CodePage TVCodePage::stPC1253=
    562,627,0x20,228,628,629,232,630,563,234,631,632,565,566,567,568,
    582,224,613,546,235,238,547,548,549,550,614,551,615,552,553,616,
    227,554,555,229,231,556,237,557,558,559,579,580,569,570,571,0x20 },
- "µÌáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÓóÓôÔõÕöÖ÷×øØùÙÜ¢İ¸Ş¹ßºü¼ı¾ş¿úÚûÛ",
- "ƒÀà",
+ "\xb5\xcc\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd3\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xdc\xa2\xdd\xb8\xde\xb9\xdf\xba\xfc\xbc\xfd\xbe\xfe\xbf\xfa\xda\xfb\xdb",
+ "\x83\xc0\xe0",
  32,Low32CharsRemaped
 };
 
@@ -1186,8 +1186,8 @@ CodePage TVCodePage::stPC1254=
    504,165,278,268,292,288,153,334,320,279,271,293,154,487,309,225,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    505,164,149,162,147,285,148,246,318,151,163,150,129,337,307,152 },
- "àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞšŠœŒÿŸ",
- "ƒµß",
+ "\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde\x9a\x8a\x9c\x8c\xff\x9f",
+ "\x83\xb5\xdf",
  32,Low32CharsRemaped
 };
 
@@ -1204,8 +1204,8 @@ CodePage TVCodePage::stPC1257=
    311,523,584,256,132,134,312,497,294,130,262,543,511,513,499,545,
    297,258,515,162,501,285,148,246,525,317,260,503,129,315,298,352
  },
- "¸¨ºª¿¯àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖ÷×øØùÙúÚûÛüÜıİşŞ",
- "µß",
+ "\xb8\xa8\xba\xaa\xbf\xaf\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xb5\xdf",
  32,Low32CharsRemaped
 };
 
@@ -1220,8 +1220,8 @@ CodePage TVCodePage::ISO8859_7=
    562,627, 32,228,628,629,232,630,563,234,631,632,565,566,567,568,
    582,224,613,546,235,238,547,548,549,550,614,551,615,552,553,616,
    227,554,555,229,231,556,237,557,558,559,579,580,569,570,571, 32 },
- "Ü¶İ¸Ş¹ßºü¼ı¾ş¿úÚûÛáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÓóÓôÔõÕöÖ÷×øØùÙ",
- "àÀ",0,0
+ "\xdc\xb6\xdd\xb8\xde\xb9\xdf\xba\xfc\xbc\xfd\xbe\xfe\xbf\xfa\xda\xfb\xdb\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd3\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9",
+ "\xe0\xc0",0,0
 };
 
 // ISO 8859-9 (1989) Pure
@@ -1236,8 +1236,8 @@ CodePage TVCodePage::ISO8859_9=
    504,165,278,268,292,288,153,334,320,279,271,293,154,487,309,225,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    505,164,149,162,147,285,148,246,318,151,163,150,129,337,307,152 },
- "àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "µßÿ",0,0
+ "\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xb5\xdf\xff",0,0
 };
 
 // ISO/IEC 8859-14:1998
@@ -1253,8 +1253,8 @@ CodePage TVCodePage::ISO8859_14=
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    475,164,149,162,147,285,148,495,318,151,163,150,129,261,477,152
  },
- "¢¡¥¤«¦¸¨ºª¼¬±°³²µ´¹·¿»¾½àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖ÷×øØùÙúÚûÛüÜıİşŞÿ¯",
- "ß",0,0
+ "\xa2\xa1\xa5\xa4\xab\xa6\xb8\xa8\xba\xaa\xbc\xac\xb1\xb0\xb3\xb2\xb5\xb4\xb9\xb7\xbf\xbb\xbe\xbd\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf7\xd7\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde\xff\xaf",
+ "\xdf",0,0
 };
 
 // ISO/IEC 8859-15:1998
@@ -1269,8 +1269,8 @@ CodePage TVCodePage::ISO8859_15=
    323,165,278,268,292,288,153,334,320,279,271,293,154,272,333,225,
    133,160,131,284,132,134,145,135,138,130,136,137,141,161,140,139,
    322,164,149,162,147,285,148,246,318,151,163,150,129,261,332,152 },
- "àÀáÁâÂãÃäÄåÅæÆçÇèÈéÉêÊëËìÌíÍîÎïÏğĞñÑòÒóÓôÔõÕöÖøØùÙúÚûÛüÜıİşŞ",
- "µßÿ",0,0
+ "\xe0\xc0\xe1\xc1\xe2\xc2\xe3\xc3\xe4\xc4\xe5\xc5\xe6\xc6\xe7\xc7\xe8\xc8\xe9\xc9\xea\xca\xeb\xcb\xec\xcc\xed\xcd\xee\xce\xef\xcf\xf0\xd0\xf1\xd1\xf2\xd2\xf3\xd3\xf4\xd4\xf5\xd5\xf6\xd6\xf8\xd8\xf9\xd9\xfa\xda\xfb\xdb\xfc\xdc\xfd\xdd\xfe\xde",
+ "\xb5\xdf\xff",0,0
 };
 
 // That's a special polish code page
@@ -1286,8 +1286,8 @@ CodePage TVCodePage::stMazovia=
    208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,
    224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,
    240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255 },
- "†•‘’œ˜¦ §¡¢£¤¥„‡€š”™",
- "‚ƒ…ˆ‰Š‹Œ“–—á",0,0
+ "\x86\x8f\x8d\x95\x91\x90\x92\x9c\x9e\x98\xa6\xa0\xa7\xa1\xa2\xa3\xa4\xa5\x84\x8e\x87\x80\x81\x9a\x94\x99",
+ "\x82\x83\x85\x88\x89\x8a\x8b\x8c\x93\x96\x97\xe1",0,0
 };
 
 /**[txh]********************************************************************
