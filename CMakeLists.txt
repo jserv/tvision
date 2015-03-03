@@ -4,7 +4,7 @@ project(rhtvision)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}")
 include(TVConfig)
 
-include_directories(${CMAKE_BINARY_DIR}/include ${CMAKE_SOURCE_DIR}/include ${CURSES_INCLUDE_DIRS})
+include_directories(${CMAKE_BINARY_DIR}/include ${CMAKE_SOURCE_DIR}/include)
 
 set(COMPAT_SRCS
 	compat/beep.c

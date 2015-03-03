@@ -3,18 +3,24 @@ cmake_minimum_required(VERSION 3.0)
 INCLUDE(CheckFunctionExists)
 INCLUDE(TestBigEndian)
 
+set(TV_DEP_LIBS)
+
 # TODO: What's is SSC?
 set(HAVE_SSC 0)
 
 find_package(Curses)
 if(CURSES_HAVE_NCURSES_H)
 	set(HAVE_NCURSES 1)
+	include_directories(${CURSES_INCLUDE_DIRS})
+	list(APPEND TV_DEP_LIBS ${CURSES_LIBRARIES})
 endif(CURSES_HAVE_NCURSES_H)
 CHECK_FUNCTION_EXISTS(define_key "ncurses.h" HAVE_DEFINE_KEY)
 
 find_package(X11)
 if(X11_FOUND)
 	set(HAVE_X11 1)
+	include_directories(${X11_INCLUDE_DIR})
+	list(APPEND TV_DEP_LIBS ${X11_LIBRARIES})
 endif(X11_FOUND)
 
 CHECK_FUNCTION_EXISTS(outb "sys/io.h" HAVE_OUTB_IN_SYS)
@@ -24,6 +30,7 @@ TEST_BIG_ENDIAN(TV_BIG_ENDIAN)
 find_package(Threads)
 if(CMAKE_USE_PTHREADS_INIT)
 	set(HAVE_LINUX_PTHREAD 1)
+	list(APPEND TV_DEP_LIBS ${CMAKE_THREAD_LIBS_INIT})
 endif(CMAKE_USE_PTHREADS_INIT)
 
 # TODO: Doesn't work with cross-compilation
