@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
+INCLUDE(CheckIncludeFiles)
 INCLUDE(CheckFunctionExists)
 INCLUDE(TestBigEndian)
 
@@ -19,7 +20,7 @@ CHECK_FUNCTION_EXISTS(define_key "ncurses.h" HAVE_DEFINE_KEY)
 set(HAVE_X11 1)
 find_package(X11)
 if(X11_FOUND)
-	TEST_INCLUDE_FILE("${X11_INCLUDE_DIR}/Xmu/Atoms.h" HAVE_X11)
+	CHECK_INCLUDE_FILES("${X11_INCLUDE_DIR}/Xmu/Atoms.h" HAVE_X11)
 	if(HAVE_X11)
 		include_directories(${X11_INCLUDE_DIR})
 		list(APPEND TV_DEP_LIBS ${X11_LIBRARIES})
