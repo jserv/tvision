@@ -41,7 +41,7 @@ class TProgressBar : public TView
 {
 public:
    // default the background char to 178, but you can pass any char you want
-   TProgressBar(const TRect& r, unsigned long iters, char abackChar='²');
+   TProgressBar(const TRect& r, unsigned long iters, char abackChar='\xB2');
    ~TProgressBar();
    virtual void draw();
    virtual TPalette& getPalette() const;

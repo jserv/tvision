@@ -57,18 +57,18 @@ static int vtAttrSize[vtDialog + 1] = { sizeof(TDsgObjData),
                                         sizeof(TViewData),
                                         sizeof(TDDialogData) };
                                         
-static char * TheClassName[vtDialog + 1] = { "TUser",
-                                             "TLabel",
-                                             "TInputLine",
-                                             "TMemo",
-                                             "TStaticText",
-                                             "TButton",
-                                             "TListBox",
-                                             "TRadioButtons",
-                                             "TCheckBoxes",
-                                             "TScrollBar",
-                                             "TScrollBar",
-                                             "TDialog" };
+static const char * TheClassName[vtDialog + 1] = { "TUser",
+                                                   "TLabel",
+                                                   "TInputLine",
+                                                   "TMemo",
+                                                   "TStaticText",
+                                                   "TButton",
+                                                   "TListBox",
+                                                   "TRadioButtons",
+                                                   "TCheckBoxes",
+                                                   "TScrollBar",
+                                                   "TScrollBar",
+                                                   "TDialog" };
 
 
 #if 0 // A useful visual map of AppPalette indexed by dialog and app
@@ -667,9 +667,9 @@ void TDFrame::draw()
       for (i = 0; i <= size.x; i++)
       {
          c = ((i + 1) % 10 == 0) ? 0x7e : 0x78;
-         b.moveChar(i, 'ú', c, 1);
+         b.moveChar(i, '\xFA', c, 1);
       }
-      bl.moveChar(0, 'ú', 0x7e, size.x - 2);
+      bl.moveChar(0, '\xFA', 0x7e, size.x - 2);
       for (i = 1; i <= size.y - 1; i++)
       {
          if (i % 10 == 0)

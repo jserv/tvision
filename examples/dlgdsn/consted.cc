@@ -61,7 +61,7 @@ extern int execDialog(TDialog *, void *);
 static TConstCollection * CommandList;
 static TConstCollection * HelpCtxList;
 
-typedef struct TConstData
+struct TConstData
 {
    char * Id;
    intptr_t Value;

@@ -85,7 +85,7 @@ static TLinkList * ObjLink = 0;
 static TObjEdit * ObjEdit;
 
 // To resolve (sprintf "%s") when there is nothing to do
-static char * blank = "";
+static const char * blank = "";
 
 //extern int TabOrder;
 

@@ -56,8 +56,8 @@ __link( RButton )
 const int cmAboutCmd   = 100;  // User selected menu item 'About'
 const int cmStatusCmd  = 101;  // User selected menu item 'Progress Bar'
 
-static char cBackChar='²';
-static char oBackChar='²';
+static char cBackChar='\xB2';
+static char oBackChar='\xB2';
 
 //========================================================================
 

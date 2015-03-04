@@ -43,8 +43,8 @@ TProgressBar::TProgressBar(const TRect& r, unsigned long iters ) : TView ( r )
 	 curIter    = 0;                    // current iteration
 	 oldPercent = 0;                    // old percentage
     curPercent = 0;                    // current percentage
-    backChar   = '°';                  // background character
-    percChar   = '²';                  // foreground character
+    backChar   = '\xB0';                  // background character
+    percChar   = '\xB0';                  // foreground character
     bar = new char[ maxWidth + 1];
     memset( bar, backChar, maxWidth );
 	 bar[ maxWidth ] = '\0';
