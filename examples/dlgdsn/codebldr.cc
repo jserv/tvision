@@ -23,6 +23,7 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 #include "dsgobjs.h"
 #include "propedit.h"
 #include "propdlgs.h"

@@ -28,6 +28,7 @@
 #define Uses_TParamText
 
 #include <tv.h>
+#include <stdint.h>
 
 class ipstream;
 class opstream;
