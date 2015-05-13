@@ -304,7 +304,6 @@ unlink 'test.exe';
 sub UpdateSpec()
 {
  $ReplaceTags{'version'}=$Version;
- ReplaceText('redhat/librhtv.spec.in',"redhat/librhtv-$Version.spec");
  ReplaceText('qnxrtp/tvision.qpg.in',"qnxrtp/tvision.qpg");
 }
 
@@ -505,7 +504,7 @@ sub GiveAdvice
     elsif ($OS eq 'DOS')
       {
        print "  Install the gtxtNNNb.zip package from the v2gnu directory of djgpp's\n";
-       print "  distribution. Read the readme file for more information.\n";
+       print "  distribution. Read the README file for more information.\n";
       }
     elsif ($Compf eq 'MinGW')
       {
@@ -520,7 +519,7 @@ sub GiveAdvice
    {
     print "  [[[[[[[*******************>>>>> IMPORTANT!!! <<<<<*******************]]]]]]]\n";
     print "  You must link with libtvfintl.a or you'll get undefined symbols. To avoid\n";
-    print "  using this library reconfigure using --no-intl. Read about it in the readme.\n";
+    print "  using this library reconfigure using --no-intl. Read about it in the README.\n";
     print "  [[[[[[[*******************>>>>> IMPORTANT!!! <<<<<*******************]]]]]]]\n";
    }
  if ((@conf{'HAVE_GPM'} eq 'no') && ($OSf eq 'Linux'))
